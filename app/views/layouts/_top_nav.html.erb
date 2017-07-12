@@ -1,4 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top">
+<%= link_to(image_tag('tesla_logo.png',height: '62', width: '62',:class=>"logo"),'/') %>
   <div class="container">
     <div class="navbar-header">
         <span class="icon-bar"></span>
@@ -7,10 +8,6 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <img src="../../assets/images/tesla_log.png"height="42" width="42">
-        <li>
-          <%= link_to 'Tesla', :root %>
-        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if session[:user_id] %>
