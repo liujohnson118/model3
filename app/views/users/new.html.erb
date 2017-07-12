@@ -1,0 +1,15 @@
+<h1>Sign up for a new Tesla account</h1>
+
+<%= form_for :user, url: '/signup' do |f| %>
+  <ul>
+  <li>First Name: <%= f.text_field :first_name %></li>
+  <li>Last Name: <%= f.text_field :last_name %></li>
+  <li>Passport Number: <%= f.text_field :passport %></li>
+  <li>Email: <%= f.text_field :email %></li>
+  <li>Password: <%= f.password_field :password %></li>
+  <li>Password Confirmation: <%= f.password_field :password_confirmation %></li>
+  <li>Date of Birth: <%= date_select("user", "dob",start_year: 1900,end_year:Time.now.year)%></li>
+  <%= f.submit "Submit" %>
+  <ul>
+
+<% end %>

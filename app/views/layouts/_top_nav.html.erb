@@ -1,5 +1,13 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 <%= link_to(image_tag('tesla_logo.png',height: '62', width: '62',:class=>"logo"),'/') %>
+<% if session[:user_id] %>
+  <a href='/logout' id="logoutLink">Logout</a>
+<% else %>
+  <a href='/signup' id="signupLink">Signup</a>
+  <a href='/login' id="loginLink">Login</a>
+<% end  %>
+<a href='https://www.tesla.com/en_CA/models' class="OfficialTeslaLink">Model S</a>
+<a href='https://www.tesla.com/en_CA/modelx' class="OfficialTeslaLink">Model X</a>
   <div class="container">
     <div class="navbar-header">
         <span class="icon-bar"></span>
@@ -12,9 +20,6 @@
       <ul class="nav navbar-nav navbar-right">
         <% if session[:user_id] %>
           <li>
-            <%= link_to cart_path do %>
-              <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
-            <% end %>
           </li>
         <% else %>
         <% end  %>
