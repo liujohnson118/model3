@@ -1,17 +1,20 @@
 <h1>Model 3 Home Page</h1>
 <a href='/'>Order Model 3</a>
-<style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
- <div id="map"></div>
-
+<section>
+  <div id="map"></div>
+  <dl>
+    <dt class="smallBattery">Aqua</dt>
+    <dd>60kWh</dd>
+    <dt class="mediumBattery">Black</dt>
+    <dd>70 kWh</dd>
+    <dt class="largeBattery">Orange</dt>
+    <dd>80 kWh</dd>
+  </dl>
+</section>
 <%= javascript_include_tag('map.js') %>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets[:google_maps_api_key] %>&callback=initMap">
-    </script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets[:google_maps_api_key] %>&callback=initMap">
+</script>
 
 
 

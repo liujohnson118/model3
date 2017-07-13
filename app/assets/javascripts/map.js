@@ -2,7 +2,7 @@ var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 32, lng: -120},
-          zoom: 8
+          zoom: 5
         });
         infoWindow = new google.maps.InfoWindow;
 
@@ -18,15 +18,37 @@ var map, infoWindow;
             infoWindow.setContent('Your Location');
             infoWindow.open(map);
             map.setCenter(pos);
-            var cityCircle = new google.maps.Circle({
+
+
+            var range_60kWh = new google.maps.Circle({
               strokeColor: '#FF0000',
+              fillColor: '#FF0000',
               strokeOpacity: 0.8,
               strokeWeight: 2,
-              fillColor: '#FF0000',
-              fillOpacity: 0.35,
+              fillOpacity: 0,
               map: map,
               center: pos,
               radius: 345000
+            });
+            var range_70kWh = new google.maps.Circle({
+              strokeColor: '#ff9900',
+              fillColor: '#ff9900',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillOpacity: 0,
+              map: map,
+              center: pos,
+              radius: 400000
+            });
+            var range_80kWh = new google.maps.Circle({
+              strokeColor: '#00cc66',
+              fillColor: '#00cc66',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillOpacity: 0,
+              map: map,
+              center: pos,
+              radius: 480000
             });
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
