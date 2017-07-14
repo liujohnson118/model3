@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
   end
 
@@ -14,6 +15,9 @@ class UsersController < ApplicationController
     else
       raise ActionController::RoutingError.new('Error creating user profile. User email already exists! Choose a different email')
     end
+  end
+
+  def model3
   end
 
   def index

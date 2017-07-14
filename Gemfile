@@ -48,6 +48,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'stripe'
 gem 'faker'
+gem 'geocoder'
 
 
 group :development, :test do

@@ -1,0 +1,26 @@
+<%= form_tag charges_path do %>
+  <article>
+  <p>Car ID <%= @car.id %></p>
+  <p>All Wheel Drive <%= @car.awd %></p>
+  <p>Self driving <%= @car.sd %></p>
+  <p>Color <%= @car.color %></p>
+  <p>Battery <%= @car.battery %></p>
+  <p>Wheel <%= @car.wheel %></p>
+  <p>Autopilot <%= @car.ap %></p>
+  <p>Created by <%= @car.user_id %></p>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $5.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"
+          data-locale="auto"></script>
+<% end %>
