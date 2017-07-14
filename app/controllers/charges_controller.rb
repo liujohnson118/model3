@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   def new
+    @car=Car.find(params[:id])
   end
 
   def create

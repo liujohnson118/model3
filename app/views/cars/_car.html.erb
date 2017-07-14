@@ -10,6 +10,9 @@
   <% if car.paid == true %>
     <p>Already paid</p>
   <% else %>
+    <%= link_to 'Pay Now', '/pay/'+car.id.to_s,
+              method: :get
+    %>
     <%= link_to 'Delete Car', '/cars/'+car.id.to_s,
               method: :delete,
               data: { confirm: 'Are you sure to delete this car?' } %>
