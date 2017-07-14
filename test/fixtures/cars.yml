@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  color: MyString
+  ap: false
+  awd: false
+  sd: false
+  battery: 1
+  wheel: 1
+
+two:
+  color: MyString
+  ap: false
+  awd: false
+  sd: false
+  battery: 1
+  wheel: 1
