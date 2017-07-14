@@ -9,7 +9,9 @@ class CarsController < ApplicationController
   def create
     my_params=car_params
     my_params[:user_id]=session[:user_id]
+    my_params[:paid]=false
     Car.create(my_params)
+    redirect_to '/mycars'
   end
 
   def index
@@ -18,6 +20,12 @@ class CarsController < ApplicationController
     else
       @cars=Car.where(user_id: session[:user_id])
     end
+  end
+
+  def destroy
+    @car_to_delete=Car.find(params[:id])
+    @car_to_delete.destroy
+    redirect_to '/mycars'
   end
 
    private
