@@ -1,0 +1,33 @@
+<h1>Order New Tesla</h1>
+  <%= form_for :car, url: '/model3/new' do |f| %>
+    <div id="battery_selector">
+      <div class="batteryButton">
+        <%= f.radio_button :battery, 60, :checked=>true %> 60kWh
+      <div class="batteryButton">
+        <%= f.radio_button :battery, 70 %> 70kWh
+      </div>
+      <div class="batteryButton">
+        <%= f.radio_button :battery, 80 %> 80kWh
+      </div>
+      <%= image_tag('battery.png', height: '280', width: '600', :id=>"tesla_battery") %>
+    </div>
+    <div id='drive_selector'>
+        <%= image_tag('drive_train.png', height: '380', width: '600', :id=>"drive_train_img") %>
+        <div id="rwd_select">
+          <p>Rear wheel drive model 3 has a separate electric motor at each of the rear wheels, providing high performance acceleration as well as commanding driving dynamics.</p>
+          <%= f.radio_button :awd, false, :checked=>true%> Rear Wheel Drive
+        </div>
+        <div id="awd_select">
+          <p>All wheel drive model 3 has a separate electric motor at each of the 4 wheels. The result is unparalleled handling in all weather conditions</p>
+          <%= f.radio_button :awd, true%> All Wheel Drive
+        </div>
+    </div>
+    <div id='color_selector'>
+      <div id="red_color_select">
+        <%= f.radio_button :color, 'red', :checked=>true %> Red
+      </div>
+      <div id='white_color_select'>
+        <%= f.radio_button :color, 'white' %> White
+      </div>
+    </div>
+  <% end %>

@@ -1,5 +1,5 @@
 <h1>Model 3 Home Page</h1>
-<a href='/'>Order Model 3</a>
+<a href='/model3/new'>Order Model 3</a>
 <section>
   <div id="map"></div>
   <dl>
@@ -16,18 +16,7 @@
 src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets[:google_maps_api_key] %>&callback=initMap">
 </script>
 
-<div id="batteryChoice">
-<div class="batterySelector">
-  <input type="radio" name="options" value="60">60kWh</input>
-</div>
-<div class="batterySelector">
-  <input type="radio" name="options" value="70">70kWh</input>
-</div>
-<div class="batterySelector">
-  <input type="radio" name="options" value="80">80kWh</input>
-</div>
-  <%= image_tag('battery.png',height: '120', width: '280',:id=>"tesla_battery") %>
-</div>
+
 
 
 

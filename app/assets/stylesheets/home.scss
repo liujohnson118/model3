@@ -39,28 +39,3 @@ img.logo{
   margin-right: 10px;
   font-size: 150%
 }
-
-dt {
-width: 40px;
-height: 2px;
-display: inline-block;
-overflow: hidden;
-margin-left:5px;
-margin-right:5px
-}
-.smallBattery {background-color: #FF0000; color: #FF0000; border: 1px solid #FF0000}
-.mediumBattery {background-color: #ff9900; color: #ff9900; border: 1px solid #FF9900 }
-.largeBattery {background-color: #00cc66; color: #00cc66; border: 1px solid #00CC66}
-
-dt.smallBattery {margin-left:25px}
-
-.batterySelector{
-  height: 40px;
-  margin-left: 20px;
-}
-
-dd {
-display: inline-block;
-width: 4em;
-margin: 0 0 0 0em;
-}
