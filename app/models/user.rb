@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :cars
+
   validates :password, length: {minimum: 6}
   has_secure_password
   validates :email, uniqueness: { case_sensitive: false }
