@@ -22,6 +22,18 @@
           <%= f.radio_button :awd, true%> All Wheel Drive
         </div>
     </div>
+
+    <div id="wheel_selector">
+      <div class="wheelButton">
+        <%= f.radio_button :wheel, 17, :checked=>true %> 17 inches
+      <div class="wheelButton">
+        <%= f.radio_button :wheel, 18 %> 18 inches
+      </div>
+      <div class="wheelButton">
+        <%= f.radio_button :wheel, 19 %> 19inches
+      </div>
+    </div>
+
     <div id='color_selector'>
       <div id="red_color_select">
         <%= f.radio_button :color, 'red', :checked=>true %> Red
@@ -30,7 +42,11 @@
         <%= f.radio_button :color, 'white' %> White
       </div>
     </div>
-    <div id='sd selector'>
+    <div id='sd_selector'>
       <%= f.check_box :sd, :checked_value=>true, :unchecked_value=>false %> Full Self Driving Capability
     </div>
+    <div id='ap_selector'>
+      <%= f.check_box :ap, :checked_value=>true, :unchecked_value=>false %> Enhanced Autopilot
+    </div>
+    <%= f.submit "Create Car for Order" %>
   <% end %>
