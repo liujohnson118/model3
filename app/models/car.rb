@@ -5,4 +5,8 @@ class Car < ApplicationRecord
   validates :ap, inclusion: { in: [true, false] }
   validates :awd, inclusion: { in: [true, false] }
   validates :color, inclusion: {in: ['red','white']}
+
+  def self.deposit
+    2500
+  end
 end

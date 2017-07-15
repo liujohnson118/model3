@@ -15,14 +15,14 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $2500.00</span>
+      <span>Amount: $<%= Car.deposit %></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.application.secrets[:stripe_published_key] %>"
+          data-key="<%= Rails.application.secrets[:stripe_publishable_key] %>"
           data-description="Model 3 Order"
-          data-amount="250000"
+          data-amount= "<%= Car.deposit %>"
           data-email= "johnson.liu@alumni.ubc.ca"
           data-locale="auto"></script>
 <% end %>
