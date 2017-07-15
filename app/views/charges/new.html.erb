@@ -18,12 +18,12 @@
       <span>Amount: $<%= Car.deposit %></span>
     </label>
   </article>
+  <input type="hidden" name="carID" value="<%= @car.id %>">
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.application.secrets[:stripe_publishable_key] %>"
           data-description="Model 3 Order"
-          data-amount= "<%= Car.deposit %>"
+          data-amount= "<%= Car.deposit*100 %>"
           data-email= "<%= User.find(session[:user_id]).email %>"
-          data-carID = "<%= @car.id %>"
           data-locale="auto"></script>
 <% end %>

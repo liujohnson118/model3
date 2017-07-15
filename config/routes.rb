@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   delete '/cars/:id/' => 'cars#destroy'
 
   get '/pay/:id/' => 'charges#new'
+  post '/pay/:id' => 'charges#create'
 
 end

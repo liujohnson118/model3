@@ -7,6 +7,8 @@ class ChargesController < ApplicationController
     # Amount in cents
     @amount = Car.deposit
     @carID = params[:carID]
+    puts "Amount in create #{@amount}"
+    puts "Looking at car ID #{@carID}"
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -20,8 +22,12 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
+    Car.update(@carID.to_i, paid: true)
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
+    puts "Error occured #{new_charge_path}"
     redirect_to new_charge_path
   end
+
 end
