@@ -7,12 +7,17 @@
   <p>Wheel <%= car.wheel %></p>
   <p>Autopilot <%= car.ap %></p>
   <p>Created by <%= car.user_id %></p>
+  <p>User age: <%= User.age(session[:user_id]) %>
   <% if car.paid == true %>
-    <p>Already paid</p>
+    <p>Deposit Already Paid</p>
   <% else %>
-    <%= link_to 'Pay Now', '/pay/'+car.id.to_s,
-              method: :get
-    %>
+    <% if User.age(session[:user_id])>17 %>
+      <%= link_to 'Pay Now', '/pay/'+car.id.to_s,
+                method: :get
+      %>
+    <% else %>
+      <p>You must be 18 or older to purcahse a vehicle</p>
+    <% end %>
     <%= link_to 'Delete Car', '/cars/'+car.id.to_s,
               method: :delete,
               data: { confirm: 'Are you sure to delete this car?' } %>

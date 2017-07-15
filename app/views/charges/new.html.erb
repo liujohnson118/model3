@@ -8,19 +8,21 @@
   <p>Wheel <%= @car.wheel %></p>
   <p>Autopilot <%= @car.ap %></p>
   <p>Created by <%= @car.user_id %></p>
+  <p><%= User.find(@car.user_id).email %></p>
     <% if flash[:error].present? %>
       <div id="error_explanation">
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Amount: $2500.00</span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
+          data-key="<%= Rails.application.secrets[:stripe_published_key] %>"
+          data-description="Model 3 Order"
+          data-amount="250000"
+          data-email= "johnson.liu@alumni.ubc.ca"
           data-locale="auto"></script>
 <% end %>
