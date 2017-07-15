@@ -23,6 +23,7 @@
           data-key="<%= Rails.application.secrets[:stripe_publishable_key] %>"
           data-description="Model 3 Order"
           data-amount= "<%= Car.deposit %>"
-          data-email= "johnson.liu@alumni.ubc.ca"
+          data-email= "<%= User.find(session[:user_id]).email %>"
+          data-carID = "<%= @car.id %>"
           data-locale="auto"></script>
 <% end %>
