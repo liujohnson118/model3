@@ -1,10 +1,16 @@
 var sd = document.getElementById('car_sd');
+var ap = document.getElementById('car_ap');
 if(sd){
   sd.addEventListener('change', function(){
     if( sd.checked) {
-      console.log("sd is checked");
       document.getElementById('car_ap').checked=true;
-    } else {
     }
   });
+}
+if(ap){
+  ap.addEventListener('change',function(){
+    if (!ap.checked){
+      document.getElementById('car_sd').checked=false;
+    }
+  })
 }
