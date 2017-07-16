@@ -4,11 +4,11 @@
       <div class="batteryButton">
         <%= f.radio_button :battery, 60, :checked=>true %> 60kWh
       <div class="batteryButton">
-        <p><%= @battery_70_price %></p>
+        <p id="battery_70_price">$<%= @battery_70_price %></p>
         <%= f.radio_button :battery, 70 %> 70kWh
       </div>
       <div class="batteryButton">
-        <p><%= @battery_80_price %></p>
+        <p id="battery_80_price">$<%= @battery_80_price %></p>
         <%= f.radio_button :battery, 80 %> 80kWh
       </div>
       <%= image_tag('battery.png', height: '280', width: '600', :id=>"tesla_battery") %>
@@ -16,13 +16,12 @@
     <div id='drive_selector'>
         <%= image_tag('drive_train.png', height: '380', width: '600', :id=>"drive_train_img") %>
         <div id="rwd_select">
-          <p>Rear wheel drive model 3 has a separate electric motor at each of the rear wheels, providing high performance acceleration as well as commanding driving dynamics.</p>
-          <%= f.radio_button :awd, false, :checked=>true%> Rear Wheel Drive
+          <p>Standard on model 3 is rear wheel drive. Rear wheel drive model 3 has a separate electric motor at each of the rear wheels, providing high performance acceleration as well as commanding driving dynamics.</p>
         </div>
         <div id="awd_select">
-          <p><%= @awd_price %></p>
+          <p id="awd_price">$<%= @awd_price %></p>
           <p>All wheel drive model 3 has a separate electric motor at each of the 4 wheels. The result is unparalleled handling in all weather conditions</p>
-          <%= f.radio_button :awd, true%> All Wheel Drive
+          <%= f.check_box :awd, :checked_value=>true, :unchecked_value=>false, :checked => false%> All Wheel Drive
         </div>
     </div>
 
@@ -30,11 +29,11 @@
       <div class="wheelButton">
         <%= f.radio_button :wheel, 17, :checked=>true %> 17 inches
       <div class="wheelButton">
-        <p><%= @wheel_18_price %></p>
+        <p id="wheel_18_price">$<%= @wheel_18_price %></p>
         <%= f.radio_button :wheel, 18 %> 18 inches
       </div>
       <div class="wheelButton">
-        <p><%= @wheel_19_price %></p>
+        <p id="wheel_19_price">$<%= @wheel_19_price %></p>
         <%= f.radio_button :wheel, 19 %> 19inches
       </div>
     </div>
@@ -48,14 +47,25 @@
       </div>
     </div>
     <div id='sd_selector'>
-      <p><%= @sd_price %></p>
+      <p id='sd_price'>$<%= @sd_price %></p>
       <%= f.check_box :sd, :checked_value=>true, :unchecked_value=>false, :checked => false%> Full Self Driving Capability
     </div>
     <div id='ap_selector'>
-      <p><%= @ap_price %></p>
-      <%= f.check_box :ap, :checked_value=>true, :unchecked_value=>false, :checked => true%> Enhanced Autopilot
+      <p id='ap_price'>$<%= @ap_price %></p>
+      <%= f.check_box :ap, :checked_value=>true, :unchecked_value=>false, :checked => false%> Enhanced Autopilot
     </div>
     <%= f.submit "Create Car for Order" %>
   <% end %>
-
+  <div class='hidden_prices'>
+    <p id="base_price_hidden"><%= Price.where(name: '3').first.base_price.to_s %></p>
+    <p id="awd_price_hidden"><%= Price.where(name: '3').first.awd_price.to_s %></p>
+    <p id="sd_price_hidden"><%= Price.where(name: '3').first.sd_price.to_s %></p>
+    <p id="ap_price_hidden"><%= Price.where(name: '3').first.ap_price.to_s %></p>
+    <p id="battery_70_price_hidden"><%= Price.where(name: '3').first.battery_70_price.to_s %></p>
+    <p id="battery_80_price_hidden"><%= Price.where(name: '3').first.battery_80_price.to_s %></p>
+    <p id="battery_90_price_hidden"><%= Price.where(name: '3').first.battery_90_price.to_s %></p>
+    <p id="wheel_18_price_hidden"><%= Price.where(name: '3').first.wheel_18_price.to_s %></p>
+    <p id="wheel_19_price_hidden"><%= Price.where(name: '3').first.wheel_19_price.to_s %></p>
+  </div>
+    <span id='total_price'>Total Price $<%= Price.where(name: '3').first.base_price.to_s %></span>
     <%= javascript_include_tag('ap_sd_select.js') %>
