@@ -7,6 +7,9 @@ var bs = document.getElementById('battery_selector'); //battery select
 var car_battery_70=document.getElementById('car_battery_70');
 var car_battery_80=document.getElementById('car_battery_80');
 var car_battery_60=document.getElementById('car_battery_60');
+var car_wheel_18=document.getElementById('car_wheel_18');
+var car_wheel_19=document.getElementById('car_wheel_19');
+var ws=document.getElementById('wheel_selector'); //wheel selector
 
 /*
 * Function to update total for configuration based on options selected
@@ -74,3 +77,5 @@ if(bs){
     showOptions();
   })
 }
+
+//Event listener for ws
