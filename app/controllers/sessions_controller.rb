@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
+
+  # GET '/login'
   def new
   end
+
+  # POST '/login'
+  # If authentication with email and password passes, redirect to '/', else redirect to /login
   def create
     user = User.authenticate_with_credentials(params[:email], params[:password])
     # If the user exists AND the password entered is correct.
@@ -13,8 +18,11 @@ class SessionsController < ApplicationController
     else
     # If user's login doesn't work, send them back to the login form.
       redirect_to '/login'
+      flash[:login_error]='User authentication failed. Please make sure your email and password are correct.'
     end
   end
+
+  # GET '/logout'
   def destroy
     session[:user_id] = nil
     redirect_to '/login'

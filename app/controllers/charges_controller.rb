@@ -1,14 +1,18 @@
 class ChargesController < ApplicationController
+
+  # GET '/pay/:id'
+  # id is id of car
   def new
     @car=Car.find(params[:id])
   end
 
+  # Auto generated for creating a charge
+  # Added functionality to set paid property to true if transaction goes through without error
   def create
     # Amount in cents
     @amount = Car.deposit
+    # ID of car
     @carID = params[:carID]
-    puts "Amount in create #{@amount}"
-    puts "Looking at car ID #{@carID}"
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],

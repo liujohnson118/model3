@@ -5,7 +5,6 @@ if(sd){
       console.log("sd is checked");
       document.getElementById('car_ap').checked=true;
     } else {
-      //chk2.attr('checked', false);
     }
   });
 }
