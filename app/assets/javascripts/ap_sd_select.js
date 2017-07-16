@@ -37,9 +37,11 @@ function showOptions(){
   if(awd.checked){
     price += Number(document.getElementById('awd_price_hidden').innerHTML);
   }
+  //If 18 in wheel selected
   if(car_wheel_18.checked){
     price += Number(document.getElementById('wheel_18_price_hidden').innerHTML);
   }
+  //If 19 in wheel selected
   if(car_wheel_19.checked){
     price += Number(document.getElementById('wheel_19_price_hidden').innerHTML);
   }
