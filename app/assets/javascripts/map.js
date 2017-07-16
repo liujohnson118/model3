@@ -1,9 +1,5 @@
 var map, infoWindow;
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 32, lng: -120},
-          zoom: 5
-        });
         infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
@@ -13,6 +9,11 @@ var map, infoWindow;
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+
+            map = new google.maps.Map(document.getElementById('map'),{
+              center: {lat: pos.lat, lng: pos.lng},
+              zoom: 5
+            })
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('Your Location');
@@ -55,7 +56,10 @@ var map, infoWindow;
           });
         } else {
           // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 32, lng: -120}, //Near Los Angeles/San Diego
+            zoom: 5
+          });
         }
       }
 
