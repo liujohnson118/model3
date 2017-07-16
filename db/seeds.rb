@@ -8,6 +8,6 @@
 
 prices=Price.create(
   [ {name:'3', awd_price: 5000, sd_price: 7800, ap_price: 4200, battery_70_price: 7500, battery_80_price: 12000,
-    wheel_18_price: 500, wheel_19_price: 750}
+    wheel_18_price: 500, wheel_19_price: 750, base_price: 35000}
   ]
   )
