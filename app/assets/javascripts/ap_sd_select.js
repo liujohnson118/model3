@@ -35,7 +35,13 @@ function showOptions(){
   }
   //If AWD is selected
   if(awd.checked){
-    price += Number(document.getElementById('awd_price_hidden').innerHTML)
+    price += Number(document.getElementById('awd_price_hidden').innerHTML);
+  }
+  if(car_wheel_18.checked){
+    price += Number(document.getElementById('wheel_18_price_hidden').innerHTML);
+  }
+  if(car_wheel_19.checked){
+    price += Number(document.getElementById('wheel_19_price_hidden').innerHTML);
   }
   //Update total on the page
   total_tag.innerHTML='$'+String(price);
@@ -79,3 +85,8 @@ if(bs){
 }
 
 //Event listener for ws
+if(ws){
+  ws.addEventListener('change',function(){
+    showOptions();
+  })
+}
