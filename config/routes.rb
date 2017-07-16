@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
-  get '/allUsers' => 'users#index'
+  get '/allUsers' => 'users#index' #Remove before submission, for debugging purposes only
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

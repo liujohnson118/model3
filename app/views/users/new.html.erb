@@ -11,5 +11,7 @@
   <li>Date of Birth: <%= date_select("user", "dob",start_year: 1900,end_year:Time.now.year)%></li>
   <%= f.submit "Submit" %>
   <ul>
-
+  <% if flash[:signup_error].present? %>
+    <p><%= flash[:signup_error] %>
+  <% end %>
 <% end %>
