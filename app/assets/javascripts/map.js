@@ -5,11 +5,13 @@ var map, infoWindow;
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
+            //Current location
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
 
+            //Create map
             map = new google.maps.Map(document.getElementById('map'),{
               center: {lat: pos.lat, lng: pos.lng},
               zoom: 5
@@ -20,7 +22,7 @@ var map, infoWindow;
             infoWindow.open(map);
             map.setCenter(pos);
 
-
+            //Draw circle representing range of 60kWh battery
             var range_60kWh = new google.maps.Circle({
               strokeColor: '#FF0000',
               fillColor: '#FF0000',
@@ -31,6 +33,8 @@ var map, infoWindow;
               center: pos,
               radius: 345000
             });
+
+            //Draw circle representing range of 70 kWh batttery
             var range_70kWh = new google.maps.Circle({
               strokeColor: '#ff9900',
               fillColor: '#ff9900',
@@ -41,6 +45,8 @@ var map, infoWindow;
               center: pos,
               radius: 400000
             });
+
+            //Draw circel representing range of 80kWh battery
             var range_80kWh = new google.maps.Circle({
               strokeColor: '#00cc66',
               fillColor: '#00cc66',
