@@ -4,9 +4,11 @@
       <div class="batteryButton">
         <%= f.radio_button :battery, 60, :checked=>true %> 60kWh
       <div class="batteryButton">
+        <p><%= @battery_70_price %></p>
         <%= f.radio_button :battery, 70 %> 70kWh
       </div>
       <div class="batteryButton">
+        <p><%= @battery_80_price %></p>
         <%= f.radio_button :battery, 80 %> 80kWh
       </div>
       <%= image_tag('battery.png', height: '280', width: '600', :id=>"tesla_battery") %>
@@ -18,6 +20,7 @@
           <%= f.radio_button :awd, false, :checked=>true%> Rear Wheel Drive
         </div>
         <div id="awd_select">
+          <p><%= @awd_price %></p>
           <p>All wheel drive model 3 has a separate electric motor at each of the 4 wheels. The result is unparalleled handling in all weather conditions</p>
           <%= f.radio_button :awd, true%> All Wheel Drive
         </div>
@@ -27,9 +30,11 @@
       <div class="wheelButton">
         <%= f.radio_button :wheel, 17, :checked=>true %> 17 inches
       <div class="wheelButton">
+        <p><%= @wheel_18_price %></p>
         <%= f.radio_button :wheel, 18 %> 18 inches
       </div>
       <div class="wheelButton">
+        <p><%= @wheel_19_price %></p>
         <%= f.radio_button :wheel, 19 %> 19inches
       </div>
     </div>
@@ -43,9 +48,11 @@
       </div>
     </div>
     <div id='sd_selector'>
+      <p><%= @sd_price %></p>
       <%= f.check_box :sd, :checked_value=>true, :unchecked_value=>false, :checked => false%> Full Self Driving Capability
     </div>
     <div id='ap_selector'>
+      <p><%= @ap_price %></p>
       <%= f.check_box :ap, :checked_value=>true, :unchecked_value=>false, :checked => true%> Enhanced Autopilot
     </div>
     <%= f.submit "Create Car for Order" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170714192634) do
+ActiveRecord::Schema.define(version: 20170716164714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(version: 20170714192634) do
     t.bigint "user_id"
     t.boolean "paid"
     t.index ["user_id"], name: "index_cars_on_user_id"
+  end
+
+  create_table "prices", force: :cascade do |t|
+    t.string "name"
+    t.float "awd_price"
+    t.float "sd_price"
+    t.float "ap_price"
+    t.float "battery_70_price"
+    t.float "battery_80_price"
+    t.float "battery_90_price"
+    t.float "battery_100_price"
+    t.float "wheel_18_price"
+    t.float "wheel_19_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

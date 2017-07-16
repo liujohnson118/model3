@@ -6,6 +6,14 @@ class CarsController < ApplicationController
     if session[:user_id] == nil
       redirect_to '/login'
     else
+      car_price_info=Price.where(name: '3').first
+      @awd_price=car_price_info.awd_price
+      @sd_price=car_price_info.sd_price
+      @ap_price=car_price_info.ap_price
+      @battery_70_price=car_price_info.battery_70_price
+      @battery_80_price=car_price_info.battery_80_price
+      @wheel_18_price=car_price_info.wheel_18_price
+      @wheel_19_price=car_price_info.wheel_19_price
     end
   end
 

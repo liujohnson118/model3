@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  awd_price: 1.5
+  sd_price: 1.5
+  ap_price: 1.5
+  battery_70_price: 1.5
+  battery_80_price: 1.5
+  battery_90_price: 1.5
+  battery_100_price: 1.5
+  wheel_18_price: 1.5
+  wheel_19_price: 1.5
+
+two:
+  name: MyString
+  awd_price: 1.5
+  sd_price: 1.5
+  ap_price: 1.5
+  battery_70_price: 1.5
+  battery_80_price: 1.5
+  battery_90_price: 1.5
+  battery_100_price: 1.5
+  wheel_18_price: 1.5
+  wheel_19_price: 1.5
