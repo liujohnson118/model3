@@ -43,10 +43,12 @@
       </div>
     </div>
     <div id='sd_selector'>
-      <%= f.check_box :sd, :checked_value=>true, :unchecked_value=>false %> Full Self Driving Capability
+      <%= f.check_box :sd, :checked_value=>true, :unchecked_value=>false, :checked => false%> Full Self Driving Capability
     </div>
     <div id='ap_selector'>
-      <%= f.check_box :ap, :checked_value=>true, :unchecked_value=>false %> Enhanced Autopilot
+      <%= f.check_box :ap, :checked_value=>true, :unchecked_value=>false, :checked => true%> Enhanced Autopilot
     </div>
     <%= f.submit "Create Car for Order" %>
   <% end %>
+
+    <%= javascript_include_tag('ap_sd_select.js') %>
