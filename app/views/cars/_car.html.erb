@@ -12,6 +12,9 @@
   <p>User age: <%= User.age(session[:user_id]) %>
   <% if car.paid == true %>
     <p>Deposit Already Paid</p>
+    <%= link_to 'Write a review', '/review/'+car.id.to_s+'/new',
+                method: :get
+      %>
   <% else %>
     <% if User.age(session[:user_id])>17 %>
       <%= link_to 'Pay Now', '/pay/'+car.id.to_s,

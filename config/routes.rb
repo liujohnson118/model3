@@ -23,4 +23,7 @@ Rails.application.routes.draw do
 
   get '/pay/:id/' => 'charges#new'
 
+  get '/myreviews' => 'reviews#index'
+  get '/review/:car_id/new' => 'reviews#new'
+  post '/review/:car_id/new' => 'reviews#create'
 end
