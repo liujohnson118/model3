@@ -1,5 +1,6 @@
 <article class='review'>
   <p>Comment<%= review.comment %></p>
+  <p>Owner <%= User.find(review.user_id).first_name.to_s+' '+User.find(review.user_id).last_name %>
   <p>Car ID<%= review.car_id %></p>
   <%= @car=Car.find(review.car_id.to_i) %>
   <p>AWD <%= @car.awd %></p>
