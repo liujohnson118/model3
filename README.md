@@ -11,6 +11,9 @@ Things you may want to cover:
 
 * Configuration
 
+copy /config/secrets_example.yml to /config/secrets.yml
+In /config/secrets.yml add required keys for google map api and stripe
+
 * Database creation
 
 * Database initialization
