@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users=User.create(
-  [{first_name:'a',last_name:'a',email:'a@a.ca',passport:'aaa111', dob: "1989-04-24",password_digest:'$2a$10$ffe/X1TTo278zRoLkkiEQOd9Y.5au/tjeO8p7TOtI/5ubqhOa2uni'},
-  {first_name: "b", last_name: "b", email: "b@b.ca", password_digest: "$2a$10$pF7VPRJ7b.pooD1yZ9U58elsyzAq9vVOG2SEML0VDEe0aovAg1aQi", passport: "bbb222", dob: "1971-12-07"},
-  {first_name: "c", last_name: "c", email: "c@c.ca", password_digest: "$2a$10$wCtUb9JWsMCouLze5esqS.Kix.fqaslkFWDEzypRu1YwuySqvRUJO", passport: "ccc333", dob: "1941-01-25"}])
+users=User.create!(
+  [{first_name:'a',last_name:'a',email:'a@a.ca',passport:'aaa111', dob: "1989-04-24",password_digest:'$2a$10$9Wq4gcgxxLLRfAf0gj6kd.y1Yd9zlBnfeTN6Jeyq7Uv9AQv5B5T6W'},
+  {first_name: "b", last_name: "b", email: "b@b.ca", password_digest: "$2a$10$dClR4bU1nEBsW.qYcJUy4O4Ol9VqODvjJymZBrm4lpLvKWNG2LZJC", passport: "bbb222", dob: "1971-12-07"},
+  {first_name: "c", last_name: "c", email: "c@c.ca", password_digest: "$2a$10$Fa7XWuZysywCLel1nO7GdOXTI43gpi4HlvJnQ9xhcnbQ6uLfjH/e6", passport: "ccc333", dob: "1941-01-25"}])
+
 
 
 prices=Price.create(
