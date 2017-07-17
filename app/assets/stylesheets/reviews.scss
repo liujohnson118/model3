@@ -1,3 +1,17 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+dt {
+width: 40px;
+height: 2px;
+display: inline-block;
+overflow: hidden;
+margin-left:5px;
+margin-right:5px
+}
+
+dd {
+display: inline-block;
+width: 4em;
+margin: 0 0 0 0em;
+}
