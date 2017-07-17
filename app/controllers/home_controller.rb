@@ -7,6 +7,5 @@ class HomeController < ApplicationController
 
   def allReviews
     @reviews=Review.all
-    puts "DUMMMB #{@reviews}"
   end
 end
