@@ -1,0 +1,8 @@
+<article class='review'>
+  <p>Comment<%= review.comment %></p>
+  <p>Car ID<%= review.car_id %></p>
+  <%= @car=Car.find(review.car_id.to_i) %>
+  <p>AWD <%= @car.awd %></p>
+  <p>battery <%= @car.battery %></p>
+  <%= link_to 'Delete', '/review/'+@car.id.to_s+'/delete',method: :delete%>
+</article>

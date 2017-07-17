@@ -1,1 +1,12 @@
 <h1>Post a review for your tesla</h1>
+
+<%= form_for :review, url:'/review/'+params[:car_id]+'/new' do |f| %>
+  <%= f.label :comment %><br>
+  <%= f.text_field :comment %>
+  <p>
+    <%= f.submit 'Submit Review' %>
+  </p>
+  <p id="counterMaxLength">140</p>
+  <span class="counter">140</span>
+  <span class="flashMessage"></span>
+<% end %>

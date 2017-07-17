@@ -26,4 +26,7 @@ Rails.application.routes.draw do
   get '/myreviews' => 'reviews#index'
   get '/review/:car_id/new' => 'reviews#new'
   post '/review/:car_id/new' => 'reviews#create'
+  delete '/review/:car_id/delete' => 'reviews#destroy'
+
+  get '/allReviews' => 'home#allReviews'
 end

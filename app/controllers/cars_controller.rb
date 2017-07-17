@@ -24,6 +24,7 @@ class CarsController < ApplicationController
     my_params=car_params
     my_params[:user_id]=session[:user_id]
     my_params[:paid]=false
+    my_params[:reviewed]=false
     car_price_info=Price.where(name: '3').first
     price = car_price_info.base_price
     if my_params[:awd]
