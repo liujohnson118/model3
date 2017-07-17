@@ -6,8 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+users=User.create(
+  [{first_name:'a',last_name:'a',email:'a@a.ca',passport:'aaa111', dob: "1989-04-24",password_digest:'$2a$10$ffe/X1TTo278zRoLkkiEQOd9Y.5au/tjeO8p7TOtI/5ubqhOa2uni'},
+  {first_name: "b", last_name: "b", email: "b@b.ca", password_digest: "$2a$10$pF7VPRJ7b.pooD1yZ9U58elsyzAq9vVOG2SEML0VDEe0aovAg1aQi", passport: "bbb222", dob: "1971-12-07"},
+  {first_name: "c", last_name: "c", email: "c@c.ca", password_digest: "$2a$10$wCtUb9JWsMCouLze5esqS.Kix.fqaslkFWDEzypRu1YwuySqvRUJO", passport: "ccc333", dob: "1941-01-25"}])
+
+
 prices=Price.create(
   [ {name:'3', awd_price: 5000, sd_price: 7800, ap_price: 4200, battery_70_price: 7500, battery_80_price: 12000,
     wheel_18_price: 500, wheel_19_price: 750, base_price: 35000}
-  ]
-  )
+  ])
+
