@@ -28,15 +28,15 @@ class CarsController < ApplicationController
     car_price_info=Price.where(name: '3').first
     price = car_price_info.base_price
     puts "Starting at #{price}"
-    if my_params[:awd]==true
+    if my_params[:awd].to_i==1
       price += car_price_info.awd_price
       puts "AWD #{price}"
     end
-    if my_params[:ap]==true
+    if my_params[:ap].to_i==1
       price += car_price_info.ap_price
       puts "AP #{price}"
     end
-    if my_params[:sd]==true
+    if my_params[:sd].to_i==1
       price += car_price_info.sd_price
       puts "SD #{price}"
     end
