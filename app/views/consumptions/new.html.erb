@@ -1,0 +1,16 @@
+<h1>Post a new consumption data your tesla</h1>
+
+<%= form_for :consumption, url:'/consumption/'+params[:car_id]+'/new' do |f| %>
+  <%= f.label :range %><br>
+  <%= f.text_field :range %>
+  <p>
+    <%= f.submit 'Submit Consumption Data' %>
+  </p>
+  <p id="counterMaxLength">5</p>
+  <span class="counter">5</span>
+  <span class="flashMessage"></span>
+<% end %>
+
+<% if flash[:invalidConsumption].present? %>
+    <p><%= flash[:invalidConsumption] %></p>
+<% end %>

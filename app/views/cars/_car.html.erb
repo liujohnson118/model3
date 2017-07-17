@@ -13,6 +13,9 @@
   <p>User age: <%= User.age(session[:user_id]) %>
   <% if car.paid == true %>
     <p>Deposit Already Paid</p>
+    <%= link_to 'Share your power consumption', '/consumption/'+car.id.to_s+'/new',
+                  method: :get
+        %>
     <% if car.reviewed == false %>
       <%= link_to 'Write a review', '/review/'+car.id.to_s+'/new',
                   method: :get
