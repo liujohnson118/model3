@@ -6,5 +6,7 @@
   <%= @car=Car.find(review.car_id.to_i) %>
   <p>AWD <%= @car.awd %></p>
   <p>battery <%= @car.battery %></p>
-  <%= link_to 'Delete', '/review/'+@car.id.to_s+'/delete',method: :delete%>
+  <% if @car.user_id == session[:user_id] %>
+    <%= link_to 'Delete', '/review/'+@car.id.to_s+'/delete',method: :delete%>
+  <% end %>
 </article>
