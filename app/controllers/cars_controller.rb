@@ -18,11 +18,36 @@ class CarsController < ApplicationController
   end
 
   # POST '/model3/new'
+  # Calculate car price and add to parameters of car based on options
   # Upon successful validation of parameters, create car to Car db and redirect to /mycars
   def create
     my_params=car_params
     my_params[:user_id]=session[:user_id]
     my_params[:paid]=false
+    car_price_info=Price.where(name: '3').first
+    price = car_price_info.base_price
+    if my_params[:awd]
+      price += car_price_info.awd_price
+    end
+    if my_params[:ap]
+      price += car_price_info.ap_price
+    end
+    if my_params[:sd]
+      price += car_price_info.sd_price
+    end
+    if my_params[:battery].to_i==70
+      price += car_price_info.battery_70_price
+    end
+    if my_params[:battery].to_i==80
+      price += car_price_info.battery_80_price
+    end
+    if my_params[:wheel].to_i==18
+      price += car_price_info.wheel_18_price
+    end
+    if my_params[:wheel].to_i==19
+      price += car_price_info.wheel_19_price
+    end
+    my_params[:price]=price
     Car.create(my_params)
     redirect_to '/mycars'
   end
