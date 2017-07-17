@@ -3,6 +3,10 @@
 <%= form_for :review, url:'/review/'+params[:car_id]+'/new' do |f| %>
   <%= f.label :comment %><br>
   <%= f.text_field :comment %>
+  <div>
+    <%= f.label :rating %>
+    <%= f.select :rating, [['5',5],['4',4],['3',3],['2',2],['1',1]]%>
+   </div>
   <p>
     <%= f.submit 'Submit Review' %>
   </p>

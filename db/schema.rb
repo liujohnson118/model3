@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170717185700) do
+ActiveRecord::Schema.define(version: 20170717205203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170717185700) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.bigint "car_id"
+    t.integer "rating"
     t.index ["car_id"], name: "index_reviews_on_car_id"
   end
 
