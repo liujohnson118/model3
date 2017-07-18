@@ -10,7 +10,8 @@
   <p>
     <%= f.submit 'Submit Review' %>
   </p>
-  <p id="counterMaxLength">140</p>
-  <span class="counter">140</span>
+  <span id="counter">140</span>
   <span class="flashMessage"></span>
 <% end %>
+
+<%= javascript_include_tag('characterCounter.js') %>
