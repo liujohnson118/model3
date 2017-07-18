@@ -27,6 +27,7 @@ class ChargesController < ApplicationController
     )
 
     Car.update(@carID.to_i, paid: true)
+    OrderConfirmationMailer.order_confirmation_email(User.find(session[:user_id]).email, Car.find(@carID)).deliver_now
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

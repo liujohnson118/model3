@@ -32,4 +32,8 @@ Rails.application.routes.draw do
   get '/consumption/:car_id/new' =>'consumptions#new'
   post '/consumption/:car_id/new' => 'consumptions#create'
 
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
 end
