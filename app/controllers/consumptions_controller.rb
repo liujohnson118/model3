@@ -1,6 +1,13 @@
 class ConsumptionsController < ApplicationController
+
+  # GET '/consumption/:car_id/new'
   def new
+    if session[:user_id] != Car.find(params[:car_id]).user_id
+      redirect_to '/login'
+    end
   end
+
+   # POST '/consumption/:car_id/new'
   def create
     my_params=consumption_params
     puts "User entered for consumption #{my_params[:range].to_f}"
