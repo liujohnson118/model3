@@ -15,5 +15,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( map.js )
 Rails.application.config.assets.precompile += %w( actual_range.js )
 Rails.application.config.assets.precompile += %w( model3_configurator.js )
+Rails.application.config.assets.precompile += %w( characterCounter.js )
 
 Rails.application.config.assets.precompile += %w( homepage.css )
