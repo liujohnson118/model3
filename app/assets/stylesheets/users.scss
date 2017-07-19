@@ -1,3 +1,58 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#registration_form {
+  margin: auto;
+  margin-top:20px;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+}
+
+#user_first_name {
+  margin: auto;
+  width: 30%;
+  border:1px solid grey;
+}
+
+#user_last_name {
+  margin: auto;
+  width: 30%;
+  border:1px solid grey;
+}
+
+#user_email {
+  margin: auto;
+  width: 30%;
+  border:1px solid grey;
+}
+
+#user_passport {
+  margin: auto;
+  width: 30%;
+  border:1px solid grey;
+}
+
+#user_password {
+  margin: auto;
+  width: 30%;
+  border:1px solid grey;
+}
+
+#user_password_confirmation {
+  margin: auto;
+  width: 30%;
+  border:1px solid grey;
+}
+
+select.select-date {
+  width: 30%;
+  margin-right: 10px;
+  float: left;
+}
+.select-date-wrapper.select-date-wrapper {
+  select {
+    display: inline-block;
+  }
+}
