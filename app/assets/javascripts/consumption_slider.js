@@ -15,9 +15,17 @@ if(rangeBox){
       rangeBox.value=val.substring(0,maxChar);
     }
     let val_numeric=Number(val);
-    if(val_numeric>=10 && val_numeric<=100){
-      rangeSlider.value=val_numeric;
+
+    if(val_numeric<5){
+      document.getElementById('consumption_kWh').innerHTML=' 5 kWh/100km';
+      rangeSlider.value=5;
+    }else if(val_numeric>35){
+      document.getElementById('consumption_kWh').innerHTML=' 35 kWh/100km';
+      rangeSlider.value=35;
+    }else{
       document.getElementById('consumption_kWh').innerHTML=val_numeric+' kWh/100km';
+      rangeSlider.value=val_numeric;
     }
+
   })
 }

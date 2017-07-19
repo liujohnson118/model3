@@ -3,12 +3,12 @@
     <fieldset>
       <legend>Post a new consumption for your Tesla</legend>
         <%= label_tag(:range, 'Your consumption in kWh per 100 km of driving') %>
-        <%= f.range_field :range, :in => 10..100, :step => 0.1%>
+        <%= f.range_field :range, :in => 5..35, :step => 0.1%>
         <%= f.submit 'Submit Consumption Data' %>
     </fieldset>
   <% end %>
   <input type='text' id='consumption_kWh_enter'> kWh/100km
-  <p id='consumption_kWh'>55 kWh/100km</p>
+  <p id='consumption_kWh'>20 kWh/100km</p>
 </div>
 
 <% if flash[:invalidConsumption].present? %>
