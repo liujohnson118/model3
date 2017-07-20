@@ -15,16 +15,30 @@ if(rangeBox){
       rangeBox.value=val.substring(0,maxChar);
     }
     let val_numeric=Number(val);
-
+    if(isNaN(val_numeric)){
+      document.getElementById('submitConsumption').style.display='none';
+    }else{
+      console.log('should display buttohn');
+      document.getElementById('submitConsumption').style.display='';
+    }
     if(val_numeric<5){
+      document.getElementById('submitConsumption').style.display='';
       document.getElementById('consumption_kWh').innerHTML=' 5 kWh/100km';
       rangeSlider.value=5;
     }else if(val_numeric>35){
+      document.getElementById('submitConsumption').style.display='';
       document.getElementById('consumption_kWh').innerHTML=' 35 kWh/100km';
       rangeSlider.value=35;
     }else{
-      document.getElementById('consumption_kWh').innerHTML=val_numeric+' kWh/100km';
-      rangeSlider.value=val_numeric;
+      if(isNaN(val_numeric)){
+        document.getElementById('submitConsumption').style.display='none';
+        rangeSlider.value=20;
+        document.getElementById('consumption_kWh').innerHTML='Invalid consumption';
+      }else{
+        rangeSlider.value=val_numeric;
+        document.getElementById('submitConsumption').style.display='';
+        document.getElementById('consumption_kWh').innerHTML=val_numeric+' kWh/100km';
+      }
     }
 
   })

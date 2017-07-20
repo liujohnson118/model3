@@ -10,10 +10,9 @@
       </fieldset>
     <% end %>
     <p id='consumption_kWh'>20 kWh/100km</p>
-  </div>
-
-  <% if flash[:invalidConsumption].present? %>
+   <% if flash[:invalidConsumption].present? %>
       <p><%= flash[:invalidConsumption] %></p>
   <% end %>
   <%= javascript_include_tag('consumption_slider.js') %>
+  </div>
 </body>
