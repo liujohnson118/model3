@@ -5,7 +5,7 @@ class Car < ApplicationRecord
   validates :ap, inclusion: { in: [true, false] }
   validates :awd, inclusion: { in: [true, false] }
   validates :paid, inclusion: { in: [true, false] }
-  validates :color, inclusion: {in: ['red','white']}
+  validates :color, inclusion: {in: ['red','white','black','grey']}
 
   # Method for getting the deposit amoutn for an order
   def self.deposit
