@@ -19,21 +19,27 @@ prices=Price.create(
   ])
 
 cars=Car.create(
-  [{color: "red", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 1, paid: false, price: 59000.0, reviewed: false},
-    {color: "white", ap: false, awd: false, sd: false, battery: 70, wheel: 17, user_id: 1, paid: false, price: 42500.0, reviewed: false},
-    {color: "white", ap: false, awd: false, sd: false, battery: 60, wheel: 17, user_id: 3, paid: false, price: 35000.0, reviewed: false},
-    {color: "red", ap: true, awd: false, sd: false, battery: 80, wheel: 17, user_id: 1, paid: false, price: 51200.0, reviewed: false},
-    {color: "red", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 1, paid: false, price: 59000.0, reviewed: false},
-    {color: "white", ap: false, awd: false, sd: false, battery: 70, wheel: 17, user_id: 2, paid: false, price: 42500.0, reviewed: false},
-    {color: "white", ap: false, awd: true, sd: false, battery: 70, wheel: 17, user_id: 2, paid: false, price: 47500.0, reviewed: false},
-    {color: "red", ap: true, awd: false, sd: false, battery: 60, wheel: 17, user_id: 2, paid: false, price: 39200.0, reviewed: false},
-    {color: "red", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 3, paid: false, price: 59000.0, reviewed: false},
-    {color: "white", ap: false, awd: false, sd: false, battery: 70, wheel: 17, user_id: 3, paid: false, price: 42500.0, reviewed: false},
-    {color: "white", ap: false, awd: true, sd: false, battery: 70, wheel: 17, user_id: 3, paid: false, price: 47500.0, reviewed: false},
-    {color: "red", ap: true, awd: false, sd: false, battery: 60, wheel: 17, user_id: 2, paid: false, price: 39200.0, reviewed: false},
+  [{color: "red", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 1, paid: false, price: 59000.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "white", ap: false, awd: false, sd: false, battery: 70, wheel: 17, user_id: 1, paid: false, price: 42500.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "white", ap: false, awd: false, sd: false, battery: 60, wheel: 17, user_id: 3, paid: false, price: 35000.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "red", ap: true, awd: false, sd: false, battery: 80, wheel: 17, user_id: 1, paid: false, price: 51200.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "red", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 1, paid: false, price: 59000.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "white", ap: false, awd: false, sd: false, battery: 70, wheel: 17, user_id: 2, paid: false, price: 42500.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "white", ap: false, awd: true, sd: false, battery: 70, wheel: 17, user_id: 2, paid: false, price: 47500.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "red", ap: true, awd: false, sd: false, battery: 60, wheel: 17, user_id: 2, paid: false, price: 39200.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "red", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 3, paid: false, price: 59000.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "white", ap: false, awd: false, sd: false, battery: 70, wheel: 17, user_id: 3, paid: false, price: 42500.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "white", ap: false, awd: true, sd: false, battery: 70, wheel: 17, user_id: 3, paid: false, price: 47500.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "red", ap: true, awd: false, sd: false, battery: 60, wheel: 17, user_id: 2, paid: false, price: 39200.0, reviewed: false,delivered:false,vin:'wait'},
   ])
 
 consumptions=Consumption.create(
   [{car_id: 1, battery: 80, range:500},{car_id: 1, battery: 80, range:510},{car_id: 1, battery: 80, range:520},{car_id: 1, battery: 80, range:470},{car_id: 1, battery: 80, range:440},
     {car_id: 2, battery: 70, range:400},{car_id: 2, battery: 70, range:410},{car_id: 2, battery: 70, range:405},{car_id: 2, battery: 70, range:390},{car_id: 2, battery: 70, range:388},
     {car_id: 3, battery: 60, range:300},{car_id: 3, battery: 60, range:340},{car_id: 3, battery: 60, range:330},{car_id: 3, battery: 60, range:280},{car_id: 3, battery: 60, range:290}])
+
+
+Car.update(2,paid:true,delivered:true,vin:'USCA987JX24U5')
+Car.update(3,paid:true,delivered:true,vin:'USCA117JX12A8')
+Car.update(8,paid:true,delivered:true,vin:'USCA888JX77B6')
+

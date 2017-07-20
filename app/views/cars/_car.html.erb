@@ -1,5 +1,13 @@
 <article class='car_info'>
-  <p>Car ID <%= car.id %></p>
+  <% if car.vin !='wait' %>
+    <p>VIN <%= car.vin %></p>
+  <% else %>
+    <% if car.paid==false %>
+      <p>Awaiting deposit payment</p>
+    <%else%>
+      <p>Estimated delivery <%= (car.updated_at+14.months).strftime("%B, %Y")%></p>
+    <%end%>
+  <%end%>
   <div class='car_options'>
     <%= image_tag('model3_'+car.color.to_s+'.png', height: '280', width: '600') %>
     <h5>This car is equipped with the following options: </h5>
@@ -21,28 +29,12 @@
     <% end %>
     <p>Wheel size: <%=car.wheel %> inches </p>
   </div>
-  <% if car.paid == true %>
-    <p>Deposit Already Paid</p>
-    <%= button_to 'Share your power consumption', '/consumption/'+car.id.to_s+'/new',
-                  method: :get
-        %>
-    <% if car.reviewed == false %>
-      <%= button_to 'Write a review', '/review/'+car.id.to_s+'/new',
-                  method: :get
-        %>
-    <% else %>
-      <p>You've already reviewed this car </p>
-    <% end %>
-  <% else %>
-    <% if User.age(session[:user_id])>17 %>
-      <%= button_to 'Pay Now', '/pay/'+car.id.to_s,
-                method: :get
-      %>
-    <% else %>
-      <p>You must be 18 or older to purcahse a vehicle</p>
-    <% end %>
-    <%= button_to 'Delete Car', '/cars/'+car.id.to_s,
-              method: :delete,
-              data: { confirm: 'Are you sure to delete this car?' } %>
-  <% end %>
+  <%if car.paid==false %>
+    <%= button_to 'Pay Now', '/pay/'+car.id.to_s, method: :get%>
+    <%= button_to 'Delete Car', '/cars/'+car.id.to_s, method: :delete, data: { confirm: 'Are you sure to delete this car?' } %>
+  <%end%>
+  <% if car.delivered==true %>
+    <%= button_to 'Write a review', '/review/'+car.id.to_s+'/new', method: :get%>
+    <%= button_to 'Share your power consumption', '/consumption/'+car.id.to_s+'/new', method: :get%>
+  <%end%>
 </article>

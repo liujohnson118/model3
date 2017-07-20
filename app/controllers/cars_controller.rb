@@ -25,6 +25,8 @@ class CarsController < ApplicationController
     my_params[:user_id]=session[:user_id]
     my_params[:paid]=false
     my_params[:reviewed]=false
+    my_params[:delivered]=false
+    my_params[:vin]='wait'
     car_price_info=Price.where(name: '3').first
     price = car_price_info.base_price
     puts "Starting at #{price}"
@@ -65,7 +67,7 @@ class CarsController < ApplicationController
     if session[:user_id] == nil
       redirect_to '/login'
     else
-      @cars=Car.where(user_id: session[:user_id])
+      @cars=Car.where(user_id: session[:user_id]).order('created_at DESC')
     end
   end
 
