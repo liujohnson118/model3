@@ -18,3 +18,4 @@ Rails.application.config.assets.precompile += %w( model3_configurator.js )
 Rails.application.config.assets.precompile += %w( characterCounter.js )
 
 Rails.application.config.assets.precompile += %w( homepage.css )
+Rails.application.config.assets.precompile += %w( consumption_slider.js )

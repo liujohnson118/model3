@@ -70,3 +70,23 @@ dt.smallBattery {margin-left:25px}
   margin-buttom: 15px;
 }
 
+.car_info {
+  border: 1px solid grey;
+  width: 40%;
+  margin:auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  text-align: center;
+  padding: 15px;
+}
+
+.car_info:hover{
+  border: 2px solid red;
+}
+.button_to{
+  margin-top: 10px;
+  margin-buttom: 10px;
+}
+.button_to:hover{
+  color: #4286f4;
+}

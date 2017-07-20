@@ -17,7 +17,13 @@ class UsersController < ApplicationController
           flash[:signup_error] = 'Invalid email.'
         end
         if user.errors[:passport]
-          flash[:signup_error] = 'Invalid passport number.'
+          flash[:signup_error] = user.errors[:passport]
+        end
+        if user.errors[:dob]
+          flash[:signup_error]=user.errors[:dob]
+        end
+        if user.errors[:password]
+          flash[:signup_error]=user.errors[:password]
         end
         redirect_to '/signup'
       end
@@ -38,6 +44,6 @@ class UsersController < ApplicationController
   private
     # Method for parameters for creating new user
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name,:passport,:dob)
+      params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :passport, :dob)
     end
 end
