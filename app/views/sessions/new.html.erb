@@ -1,11 +1,10 @@
 <!-- app/views/sessions/new.html.erb -->
-<%= stylesheet_link_tag "application.css" %>
+<body class='backgroundBlackTesla'
 <div class="apple">
 <div class="banana">
 <%= form_for :user, html: {class: 'pure-form pure-form-stacked'}, url: '/login' do |f| %>
     <fieldset>
         <legend>Sign Up for a new Tesla Account</legend>
-
         <%= label_tag(:email, 'Email', class: 'banana-sandwich') %>
         <%= f.email_field :email, placeholder: 'Enter e-mail' %>
         <span class="pure-form-message">This is a required field.</span>
@@ -24,3 +23,4 @@
     </fieldset>
 <% end %>
 </div>
+</body>

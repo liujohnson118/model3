@@ -1,4 +1,5 @@
-<div id='map'></div>
+<section id='general'>
+<div id='map' style='width:100%'></div>
 <dl>
     <dt class="smallBattery">Aqua</dt>
     <dd>60kWh</dd>
@@ -7,12 +8,19 @@
     <dt class="largeBattery">Orange</dt>
     <dd>80 kWh</dd>
 </dl>
-<p>As of now Tesla model3 with a 60kWh battery can travel <p id='actual_range_60'><%=Consumption.where(battery: 60).average(:range).to_s %></p> km on a full charge</p>
-<p>As of now Tesla model3 with a 70kWh battery can travel <p id='actual_range_70'><%=Consumption.where(battery: 70).average(:range).to_s %></p> km on a full charge</p>
-<p>As of now Tesla model3 with a 80kWh battery can travel <p id='actual_range_80'><%=Consumption.where(battery: 80).average(:range).to_s %></p> km on a full charge</p>
+<div id='general_range'>
+  <p id='actual_range_60' style='display: none'><%=Consumption.where(battery: 60).average(:range).to_s %></p>
+  <p id='actual_range_70' style='display: none'><%=Consumption.where(battery: 70).average(:range).to_s %></p>
+  <p id='actual_range_80' style='display: none'><%=Consumption.where(battery: 80).average(:range).to_s %></p>
+  <p>Model 3 with a 60kWh battery can travel <%=Consumption.where(battery: 60).average(:range).to_s %> km on a full charge</p>
+  <p>Model 3 with a 70kWh battery can travel <%=Consumption.where(battery: 70).average(:range).to_s %> km on a full charge</p>
+  <p>Model 3 with a 80kWh battery can travel <%=Consumption.where(battery: 80).average(:range).to_s %> km on a full charge</p>
+</div>
+</section>
 <div id='all_user_revies'>
   <%= render @reviews %>
 </div>
+
 
 <%= javascript_include_tag('actual_range.js') %>
 <script async defer
