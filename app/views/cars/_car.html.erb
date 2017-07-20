@@ -28,6 +28,7 @@
       <p>Standard 60 kWh battery</p>
     <% end %>
     <p>Wheel size: <%=car.wheel %> inches </p>
+    <p>Total Retail Price: <%=car.price%> USD</p>
   </div>
   <%if car.paid==false %>
     <%= button_to 'Pay Now', '/pay/'+car.id.to_s, method: :get%>
