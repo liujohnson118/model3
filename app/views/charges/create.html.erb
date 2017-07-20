@@ -1,1 +1,5 @@
-<h2>Thanks, you paid <strong>$<%= Car.deposit %></strong>!</h2>
+<div id='confirm_order'>
+<p>Thank your for your deposit of <strong>$<%= Car.deposit %></strong> US dollars for your Tesla!</p>
+<p>You will pay the remaining amoutn of <strong>$<%=Car.find(@carID).price-Car.deposit%></strong> at the time of delivery</p>
+<p>An email has been sent to <%=User.find(session[:user_id]).email%> with details for your Tesla Model 3 order </p>
+</div>
