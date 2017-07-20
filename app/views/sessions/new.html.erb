@@ -1,13 +1,26 @@
 <!-- app/views/sessions/new.html.erb -->
+<%= stylesheet_link_tag "application.css" %>
+<div class="apple">
+<div class="banana">
+<%= form_for :user, html: {class: 'pure-form pure-form-stacked'}, url: '/login' do |f| %>
+    <fieldset>
+        <legend>Sign Up for a new Tesla Account</legend>
 
-<h1>Login</h1>
+        <%= label_tag(:email, 'Email', class: 'banana-sandwich') %>
+        <%= f.email_field :email, placeholder: 'Enter e-mail' %>
+        <span class="pure-form-message">This is a required field.</span>
 
-<%= form_tag '/login' do %>
-Email: <%= text_field_tag :email %>
-Password: <%= password_field_tag :password %>
-<%= submit_tag "Submit" %>
+        <%= label_tag(:password, 'Password') %>
+        <%= f.password_field :password, placeholder: 'Enter password', :class => "password-label" %>
+        <span class="pure-form-message">This is a required field.</span>
+
+        <button type="submit" class="pure-button pure-button-primary">Sign up</button>
+    </fieldset>
 <% end %>
+</div>
 
 <% if flash[:login_error].present? %>
 <span><%= flash[:login_error] %></span>
+    </fieldset>
 <% end %>
+</div>
