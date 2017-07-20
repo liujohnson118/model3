@@ -1,3 +1,4 @@
+<body class='background'>
 <div id='registration_form'>
   <%= form_for :user, html: {class: 'pure-form pure-form-stacked'}, url: '/signup' do |f| %>
     <fieldset>
@@ -38,3 +39,4 @@
  <% if flash[:signup_error].present? %>
     <p><%= flash[:signup_error] %>
  <% end %>
+ <body>
