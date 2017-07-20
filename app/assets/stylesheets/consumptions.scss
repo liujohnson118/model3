@@ -3,10 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #consumption_slider {
-  width: 45%;
+  width: 35%;
   margin:auto;
+  margin-top:50px;
+  border-radius: 4px;
+  text-aligh: center;
+  background: white;
 }
 
 #consumption_range {
+  margin: auto;
   width: 30%;
+  margin-top:15px;
+}
+
+#consumption_kWh_enter {
+  width: 20%;
+  margin:auto;
+  margin-top:15px;
+}
+
+#consumption_kWh{
+  width: 30%;
+  margin-left: 41.25%;
+}
+
+#submitConsumption {
+  width: 30%;
+  margin:auto;
+  margin-top: 15px;
+  background: #42cbf4;
+}
+
+.pure-form {
+  text-align: center;
+}
+
+body.greenField {
+  background: url('greenField.jpg');
 }

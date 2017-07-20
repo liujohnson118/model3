@@ -1,42 +1,42 @@
 <body class='background'>
-<div id='registration_form'>
-  <%= form_for :user, html: {class: 'pure-form pure-form-stacked'}, url: '/signup' do |f| %>
-    <fieldset>
-      <legend>Sign Up for a new Tesla Account</legend>
+  <div id='registration_form'>
+    <%= form_for :user, html: {class: 'pure-form pure-form-stacked'}, url: '/signup' do |f| %>
+      <fieldset>
+        <legend>Sign Up for a new Tesla Account</legend>
 
-        <%= label_tag(:first_name, 'First Name') %>
-        <%= f.text_field :first_name, placeholder: 'Enter Fist Name' %>
-        <span class="pure-form-message">This is a required field.</span>
+          <%= label_tag(:first_name, 'First Name') %>
+          <%= f.text_field :first_name, placeholder: 'Enter Fist Name' %>
+          <span class="pure-form-message">This is a required field.</span>
 
-        <%= label_tag(:last_name, 'Last Name') %>
-        <%= f.text_field :last_name, placeholder: 'Enter Last Name'%>
-        <span class="pure-form-message">This is a required field.</span>
+          <%= label_tag(:last_name, 'Last Name') %>
+          <%= f.text_field :last_name, placeholder: 'Enter Last Name'%>
+          <span class="pure-form-message">This is a required field.</span>
 
-        <%= label_tag(:passport, 'Passport') %>
-        <%= f.text_field :passport, placeholder: 'Enter Passport Number' %>
-        <span class="pure-form-message">This is a required field.</span>
+          <%= label_tag(:passport, 'Passport') %>
+          <%= f.text_field :passport, placeholder: 'Enter Passport Number' %>
+          <span class="pure-form-message">This is a required field.</span>
 
-        <%= label_tag(:email, 'Email') %>
-        <%= f.email_field :email, placeholder: 'Enter e-mail' %>
-        <span class="pure-form-message">This is a required field.</span>
+          <%= label_tag(:email, 'Email') %>
+          <%= f.email_field :email, placeholder: 'Enter e-mail' %>
+          <span class="pure-form-message">This is a required field.</span>
 
-        <%= label_tag(:password, 'Password') %>
-        <%= f.password_field :password, placeholder: 'Enter password' %>
-        <span class="pure-form-message">This is a required field.</span>
+          <%= label_tag(:password, 'Password') %>
+          <%= f.password_field :password, placeholder: 'Enter password' %>
+          <span class="pure-form-message">This is a required field.</span>
 
-        <%= label_tag(:password_confirmation , 'Password Confirmation') %>
-        <%= f.password_field :password_confirmation, placeholder: 'Enter password again' %>
-        <span class="pure-form-message">This is a required field.</span>
+          <%= label_tag(:password_confirmation , 'Password Confirmation') %>
+          <%= f.password_field :password_confirmation, placeholder: 'Confirm password' %>
+          <span class="pure-form-message">This is a required field.</span>
 
-       <div class="select-date-wrapper">
-         <%= label_tag(:dob , 'Date of Birth') %>
-         <%= date_select("user", "dob",start_year: 1900,end_year:Time.now.year, class: 'select-date')%></div>
-        <button type="submit" class="pure-button pure-button-primary">Sign up</button>
-      </fieldset>
-  <% end %>
-</div>
+         <div class="select-date-wrapper">
+           <%= label_tag(:dob , 'Date of Birth') %>
+           <%= date_select("user", "dob",start_year: 1900,end_year:Time.now.year, class: 'select-date')%></div>
+          <button type="submit" class="pure-button pure-button-primary">Sign up</button>
+        </fieldset>
+    <% end %>
+  </div>
 
- <% if flash[:signup_error].present? %>
-    <p><%= flash[:signup_error] %>
- <% end %>
+   <% if flash[:signup_error].present? %>
+      <p><%= flash[:signup_error] %>
+   <% end %>
  <body>
