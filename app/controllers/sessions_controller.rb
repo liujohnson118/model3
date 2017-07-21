@@ -7,7 +7,9 @@ class SessionsController < ApplicationController
   # POST '/login'
   # If authentication with email and password passes, redirect to '/', else redirect to /login
   def create
-    user = User.authenticate_with_credentials(params[:email], params[:password])
+    puts "Login using email #{params[:session][:email]}"
+    puts "Login using password #{params[:session][:password]}"
+    user = User.authenticate_with_credentials(params[:session][:email], params[:session][:password])
     # If the user exists AND the password entered is correct.
     if user
       # Save the user id inside the browser cookie. This is how we keep the user

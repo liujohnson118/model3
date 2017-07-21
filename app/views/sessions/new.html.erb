@@ -1,26 +1,24 @@
 <!-- app/views/sessions/new.html.erb -->
-<body class='backgroundBlackTesla'
-<div class="apple">
-<div class="banana">
-<%= form_for :user, html: {class: 'pure-form pure-form-stacked'}, url: '/login' do |f| %>
-    <fieldset>
-        <legend>Sign Up for a new Tesla Account</legend>
-        <%= label_tag(:email, 'Email', class: 'banana-sandwich') %>
-        <%= f.email_field :email, placeholder: 'Enter e-mail' %>
-        <span class="pure-form-message">This is a required field.</span>
+<body class='backgroundBlackTesla'>
+<div id='login_form'>
+<%= form_for :session, html: {class: 'pure-form pure-form-stacked'}, url: '/login' do |f| %>
+      <fieldset>
+        <legend>Login to Tesla Account</legend>
+        <%= label_tag(:email, 'Email') %>
+          <%= f.email_field :email, placeholder: 'Enter e-mail' %>
+          <span class="pure-form-message">This is a required field.</span>
 
-        <%= label_tag(:password, 'Password') %>
-        <%= f.password_field :password, placeholder: 'Enter password', :class => "password-label" %>
-        <span class="pure-form-message">This is a required field.</span>
-
-        <button type="submit" class="pure-button pure-button-primary">Sign up</button>
+          <%= label_tag(:password, 'Password') %>
+          <%= f.password_field :password, placeholder: 'Enter password' %>
+          <span class="pure-form-message">This is a required field.</span>
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
     </fieldset>
-<% end %>
+    <%end %>
 </div>
+
+
 
 <% if flash[:login_error].present? %>
 <span><%= flash[:login_error] %></span>
-    </fieldset>
 <% end %>
-</div>
 </body>
