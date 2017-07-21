@@ -43,3 +43,7 @@ Car.update(2,paid:true,delivered:true,vin:'USCA987JX24U5')
 Car.update(3,paid:true,delivered:true,vin:'USCA117JX12A8')
 Car.update(8,paid:true,delivered:true,vin:'USCA888JX77B6')
 
+Review.create([{comment:'a reviewed car 1 5',user_id:1,car_id:1,rating:5},{comment:'a reviewed car 2 4',user_id:1,car_id:2,rating:4},
+  {comment:'c reviewed car 3 3',user_id:3,car_id:3,rating:3},{comment:'a reviewed car 4 5',user_id:1,car_id:4,rating:5},
+  {comment:'a reviewed car 5 4',user_id:1, car_id:5,rating:4},{comment:'b reviewed car 6 5',user_id:2,car_id:6,rating:5},
+  {comment:'b reviewed car 7 4',user_id:2,car_id:7,rating:4},{comment:'b reviewed 1',user_id:2,car_id:8,rating:1}])
