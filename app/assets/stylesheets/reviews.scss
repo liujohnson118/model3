@@ -15,3 +15,31 @@ display: inline-block;
 width: 4em;
 margin: 0 0 0 0em;
 }
+
+article.review{
+  width: 80%;
+  margin:auto;
+  margin-top: 20px;
+  border: black solid 1px;
+  border-radius: 8px;
+}
+
+div.review_comment{
+  border-bottom: 1px solid grey;
+}
+
+span.review_user{
+ text-align:right;
+ margin-right:5px;
+ margin-buttom:2px;
+}
+
+a.delete_review{
+  float:right;
+  margin-right:5px;
+}
+
+
+.fa-star{
+  color:orange;
+}

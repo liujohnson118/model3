@@ -17,10 +17,10 @@
   <p>Model 3 with a 80kWh battery can travel <%=Consumption.where(battery: 80).average(:range).to_s %> km on a full charge</p>
 </div>
 </section>
-<div id='all_user_revies'>
-  <%= render @reviews %>
+<div id='all_user_reviews'>
+  <%= render Review.where(user_id:session[:user_id]) %>
+  <%= render Review.where.not(user_id:session[:user_id]) %>
 </div>
-
 
 <%= javascript_include_tag('actual_range.js') %>
 <script async defer

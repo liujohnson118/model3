@@ -1,19 +1,24 @@
 <article class='review'>
-<div class='rating'>
+ <p style='display: none'><%= @car=Car.find(review.car_id.to_i) %></p>
+<div class='rating' style='border-bottom: 1px solid grey'>
   <% i = 0 %>
   <% while i<review.rating.to_i %>
     <span><i class="fa fa-star" aria-hidden="true"></i></span>
     <% i = i+1 %>
   <% end %>
-</div>
-  <p>User score <%= review.rating.to_s %></p>
-  <p>Comment<%= review.comment %></p>
-  <p>Owner <%= User.find(review.user_id).first_name.to_s+' '+User.find(review.user_id).last_name %>
-  <p>Car ID<%= review.car_id %></p>
-  <%= @car=Car.find(review.car_id.to_i) %>
-  <p>AWD <%= @car.awd %></p>
-  <p>battery <%= @car.battery %></p>
   <% if @car.user_id == session[:user_id] %>
-    <%= link_to 'Delete', '/review/'+@car.id.to_s+'/delete',method: :delete%>
+    <%= link_to 'Delete', '/review/'+@car.id.to_s+'/delete', class:'delete_review',method: :delete%>
   <% end %>
+</div>
+<div class='review_comment'>
+  <%= review.comment %>
+</div>
+  <div class='review_car_owner_detail'>
+    <%if @car.awd==true %>
+      <p>Model 3 with <%= @car.battery %> kWh battery and AWD</p>
+    <% else %>
+      <p>Model 3 with <%= @car.battery %> kWh battery and RWD Owner <span class='review_user'><%= User.find(review.user_id).first_name.to_s+' '+User.find(review.user_id).last_name %></span></p>
+    <% end %>
+
+  </div>
 </article>
