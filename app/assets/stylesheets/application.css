@@ -15,20 +15,20 @@
 
  */
 #map {
-        height: 400px;
-        width: 50%;
-        margin:20px;
+        height: 30em;
+        width: 90%;
+        margin-left: 5%;
        }
 .banana {
         background-color: white;
         width: 24%;
-        border-radius: 10px;
+        border-radius: 2em;
         position: absolute;
         top: 20%;
         left: 38%;
-        padding-left: 30px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-left: 12em;
+        padding-top: 8em;
+        padding-bottom: 8em;
 }
 
 

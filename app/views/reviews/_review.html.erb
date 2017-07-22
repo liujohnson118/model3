@@ -19,6 +19,5 @@
     <% else %>
       <p>Model 3 with <%= @car.battery %> kWh battery and RWD Owner <span class='review_user'><%= User.find(review.user_id).first_name.to_s+' '+User.find(review.user_id).last_name %></span></p>
     <% end %>
-
   </div>
 </article>
