@@ -19,30 +19,35 @@
       <%= image_tag('battery.png', height: '280', width: '600', :id=>"tesla_battery") %>
     </div>
     <div id='drive_selector' class='config_option'>
-        <%= image_tag('drive_train.png', height: '380', width: '600', :id=>"drive_train_img") %>
+      <h2 class='selector_title'>Select Drivetrain</h2>
+        <%= image_tag('drive_train.png', :id=>"drive_train_img") %>
         <div id="rwd_select">
-          <p>Standard on model 3 is rear wheel drive. Rear wheel drive model 3 has a separate electric motor at each of the rear wheels, providing high performance acceleration as well as commanding driving dynamics.</p>
+          <p style='width:38%;margin-top: 2em;margin-left: 1.5em'>Standard on model 3 is rear wheel drive. Rear wheel drive model 3 has a separate electric motor at each of the rear wheels, providing high performance acceleration as well as commanding driving dynamics.</p>
         </div>
         <div id="awd_select">
-          <p id="awd_price">$<%= @awd_price %></p>
-          <p>All wheel drive model 3 has a separate electric motor at each of the 4 wheels. The result is unparalleled handling in all weather conditions</p>
+          <p style='width:38%;margin-top: 1em;margin-left: 1.5em'>All wheel drive model 3 has a separate electric motor at each of the 4 wheels. The result is unparalleled handling in all weather conditions</p>
+          <p id="awd_price" style='width:38%;margin-top: 1em;margin-left: 1.5em'>$<%= @awd_price %></p>
           <%= f.check_box :awd, :checked_value=>true, :unchecked_value=>false, :checked => false%> All Wheel Drive
         </div>
     </div>
-
     <div id="wheel_selector" class="config_option">
+      <h2 class='selector_title'>Wheel Selections</h2><br>
       <div class="wheelButton">
+        <%= image_tag('wheel_17.png',:class => 'wheel_pic') %> <br>
         <%= f.radio_button :wheel, 17, :checked=>true %> 17 inches
-      <div class="wheelButton">
-        <p id="wheel_18_price">$<%= @wheel_18_price %></p>
-        <%= f.radio_button :wheel, 18 %> 18 inches
+        <p>Standard</p>
       </div>
       <div class="wheelButton">
-        <p id="wheel_19_price">$<%= @wheel_19_price %></p>
-        <%= f.radio_button :wheel, 19 %> 19inches
+        <%= image_tag('wheel_18.png',:class => 'wheel_pic') %> <br>
+        <%= f.radio_button :wheel, 18 %> 18 inches
+        <p id="wheel_18_price">$<%= @wheel_18_price %></p>
+      </div>
+      <div class="wheelButton">
+        <%= image_tag('wheel_19.png',:class => 'wheel_pic') %> <br>
+        <%= f.radio_button :wheel, 19 %> 19 inches
+         <p id="wheel_19_price">$<%= @wheel_19_price %></p>
       </div>
     </div>
-
     <div id='color_selector' class='config_option'>
       <div id="red_color_select">
         <%= f.radio_button :color, 'red', :checked=>true %> Red
