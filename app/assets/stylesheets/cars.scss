@@ -24,27 +24,41 @@ margin: 0 0 0 0em;
 dt.smallBattery {margin-left:25px}
 
 #battery_selector{
-  margin-top: 60px;
-  height: 40px;
-  margin-left: 20%;
+  height: 30em;
+  width:60%;
+  margin:auto;
+  border: 4px solid #e5e2de;
+  border-radius: 8px;
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+
+#battery_selector:hover{
+  border: 8px solid #e5e2de;
 }
 
 #drive_selector{
-  margin-left: 0;
-  margin-top: 300px;
+  width:60%;
+  height:40em;
+  margin:auto;
+  border: 4px solid #e5e2de;
+  border-radius: 8px;
+  padding-top: 1em;
+  padding-left: 1em;
 }
 
 
 #tesla_battery {
   float:right;
-  margin-right:30%;
-  margin-top: -100px;
+  margin:auto;
+  margin-top: -150px;
 }
 
 #drive_train_img {
   float:right;
-  margin-right:20%;
-  margin-top: 20px;
+  margin-right:2%;
+  margin-top: 2%;
 }
 
 #color_selector{
@@ -104,4 +118,11 @@ div.gm-style{
 
 #general_range{
   padding:20px;
+}
+
+.selector_title{
+  display: inline-block;
+  width:30%;
+  margin-left:35%;
+  text-align:center;
 }

@@ -1,19 +1,24 @@
-<h1>Order New Tesla</h1>
+<h1 style='width:20%; margin:auto; text-align: center;margin-top: 1em; margin-bottom: 1em'>Order New Tesla</h1>
   <%= form_for :car, url: '/model3/new' do |f| %>
-    <div id="battery_selector">
+    <div id="battery_selector" class='config_option'>
+      <h2 class='selector_title'>Select Battery</h2>
       <div class="batteryButton">
-        <%= f.radio_button :battery, 60, :checked=>true %> 60kWh
-      <div class="batteryButton">
-        <p id="battery_70_price">$<%= @battery_70_price %></p>
-        <%= f.radio_button :battery, 70 %> 70kWh
+        <%= f.radio_button :battery, 60, :checked=>true %>
+        <span> 60kWh Standard</span> <br>
+        <p>EPA range 345km</p>
       </div>
       <div class="batteryButton">
-        <p id="battery_80_price">$<%= @battery_80_price %></p>
-        <%= f.radio_button :battery, 80 %> 80kWh
+        <%= f.radio_button :battery, 70 %> 70kWh <span id="battery_70_price">$<%= @battery_70_price %></span> <br>
+        <p> EPA range 400km</p>
+      </div>
+      <div class="batteryButton">
+        <%= f.radio_button :battery, 80 %> 80kWh <span id="battery_80_price">$<%= @battery_80_price %></span>
+        <br>
+        <p>EPA range 480km</p>
       </div>
       <%= image_tag('battery.png', height: '280', width: '600', :id=>"tesla_battery") %>
     </div>
-    <div id='drive_selector'>
+    <div id='drive_selector' class='config_option'>
         <%= image_tag('drive_train.png', height: '380', width: '600', :id=>"drive_train_img") %>
         <div id="rwd_select">
           <p>Standard on model 3 is rear wheel drive. Rear wheel drive model 3 has a separate electric motor at each of the rear wheels, providing high performance acceleration as well as commanding driving dynamics.</p>
@@ -25,7 +30,7 @@
         </div>
     </div>
 
-    <div id="wheel_selector">
+    <div id="wheel_selector" class="config_option">
       <div class="wheelButton">
         <%= f.radio_button :wheel, 17, :checked=>true %> 17 inches
       <div class="wheelButton">
@@ -38,7 +43,7 @@
       </div>
     </div>
 
-    <div id='color_selector'>
+    <div id='color_selector' class='config_option'>
       <div id="red_color_select">
         <%= f.radio_button :color, 'red', :checked=>true %> Red
       </div>
@@ -52,11 +57,11 @@
         <%= f.radio_button :color, 'grey' %> Grey
       </div>
     </div>
-    <div id='sd_selector'>
+    <div id='sd_selector' class="config_option">
       <p id='sd_price'>$<%= @sd_price %></p>
       <%= f.check_box :sd, :checked_value=>true, :unchecked_value=>false, :checked => false%> Full Self Driving Capability
     </div>
-    <div id='ap_selector'>
+    <div id='ap_selector' class='config_option'>
       <p id='ap_price'>$<%= @ap_price %></p>
       <%= f.check_box :ap, :checked_value=>true, :unchecked_value=>false, :checked => false%> Enhanced Autopilot
     </div>
