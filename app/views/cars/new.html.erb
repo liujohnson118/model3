@@ -49,16 +49,24 @@
       </div>
     </div>
     <div id='color_selector' class='config_option'>
-      <div id="red_color_select">
+    <h2 class='selector_title'>Exterior Colors</h2><br>
+      <div id='realCar'>
+        <%= image_tag('model3_red.png', height: '90%', width: '80%',:id=>'real_car_pic',data:{
+          red: asset_path('model3_red.png'),
+          black: asset_path('model3_black.png'),
+          white: asset_path('model3_white.png'),
+          grey: asset_path('model3_grey.png'),}) %>
+      </div>
+      <div class="color_select">
         <%= f.radio_button :color, 'red', :checked=>true %> Red
       </div>
-      <div id='white_color_select'>
+      <div class='color_select'>
         <%= f.radio_button :color, 'white' %> White
       </div>
-      <div id='black_color_select'>
+      <div class='color_select'>
         <%= f.radio_button :color, 'black' %> Black
       </div>
-      <div id='grey_color_select'>
+      <div class='color_select'>
         <%= f.radio_button :color, 'grey' %> Grey
       </div>
     </div>
@@ -84,4 +92,5 @@
     <p id="wheel_19_price_hidden"><%= Price.where(name: '3').first.wheel_19_price.to_s %></p>
   </div>
     <span id='total_price'>Total Price $<%= Price.where(name: '3').first.base_price.to_s %></span>
+    <p id='fuck'><%= asset_path('model3_red.png')%></p>
     <%= javascript_include_tag('model3_configurator.js') %>

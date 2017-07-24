@@ -10,6 +10,11 @@ var car_battery_60=document.getElementById('car_battery_60');
 var car_wheel_18=document.getElementById('car_wheel_18');
 var car_wheel_19=document.getElementById('car_wheel_19');
 var ws=document.getElementById('wheel_selector'); //wheel selector
+var cs=document.getElementById('color_selector');
+
+$(document).ready(function(){
+  console.log('fuck this is ready');
+})
 
 /*
 * Function to update total for configuration based on options selected
@@ -90,5 +95,24 @@ if(bs){
 if(ws){
   ws.addEventListener('change',function(){
     showOptions();
+  })
+}
+
+if(cs){
+  cs.addEventListener('change',function(){
+    let redColorCheck=document.getElementById('car_color_red');
+    let whiteColorCheck=document.getElementById('car_color_white');
+    let blackColorCheck=document.getElementById('car_color_black');
+    let greyColorCheck=document.getElementById('car_color_grey');
+    let carPic=$('#real_car_pic');
+    if(redColorCheck.checked){
+      carPic.attr('src', carPic.data('red'));
+    }else if(whiteColorCheck.checked){
+      carPic.attr('src', carPic.data('white'));
+    }else if(blackColorCheck.checked){
+      carPic.attr('src', carPic.data('black'));
+    }else{
+      carPic.attr('src', carPic.data('grey'));
+    }
   })
 }
