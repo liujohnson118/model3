@@ -70,13 +70,19 @@
         <%= f.radio_button :color, 'grey' %> Grey
       </div>
     </div>
-    <div id='sd_selector' class="config_option">
-      <p id='sd_price'>$<%= @sd_price %></p>
-      <%= f.check_box :sd, :checked_value=>true, :unchecked_value=>false, :checked => false%> Full Self Driving Capability
-    </div>
-    <div id='ap_selector' class='config_option'>
-      <p id='ap_price'>$<%= @ap_price %></p>
-      <%= f.check_box :ap, :checked_value=>true, :unchecked_value=>false, :checked => false%> Enhanced Autopilot
+    <div id='advancedDriving'>
+      <div id='sd_selector' class="config_option">
+        <%= image_tag('sd.jpg', height: '60%', width: '60%', :id=>"sd_pic") %>
+        <p style="text-align:left;margin-left:1em"> The system is designed to conduct short and long distance trips in cities and on highways with no driver input. For superchargers to be enabled, the driver does not need to plug in the vehicle. </p>
+        <p id='sd_price'>$<%= @sd_price %></p>
+        <%= f.check_box :sd, :checked_value=>true, :unchecked_value=>false, :checked => false%> Full Self Driving Capability
+      </div>
+      <div id='ap_selector' class='config_option'>
+        <%= image_tag('ap.jpg', height: '60%', width: '60%', :id=>"ap_pic") %>
+        <p style="text-align:left;margin-left:1em;margin-top: 2.5em">Powered by 12 ultrasonic sonar sensors, the enhanced autopilot provides an enjoyable driving experience with a full suite of safety equipment that includes pre-collision mitigiation, dynamic radar cruise control with stop-and-go, and automatic lane change. </p>
+        <p id='ap_price'>$<%= @ap_price %></p>
+        <%= f.check_box :ap, :checked_value=>true, :unchecked_value=>false, :checked => false%> Enhanced Autopilot
+      </div>
     </div>
     <%= f.submit "Create Car for Order" %>
   <% end %>
