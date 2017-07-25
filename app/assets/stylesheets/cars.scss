@@ -206,7 +206,6 @@ div.gm-style{
   height:55%;
 }
 
-
 #real_car_pic{
   width:50%;
   height:40%;
@@ -221,11 +220,33 @@ div.color_select{
 }
 
 #advancedDriving{
-
   width:60%;
-  height:30em;
+  height:26em;
   margin:auto;
   margin-top: 1em;
 }
 
+#carOrderSubmit{
+  border-radius:2em;
+  height:2em;
+}
 
+#carOrderSubmit:hover{
+  background: #86aeef;
+}
+
+#total_price{
+  position:fixed;
+  background: #e5e2de;
+  width:14%;
+  margin-left: 2.5%;
+  border-radius: 1em;
+  text-align:center;
+  padding-top:0.5em;
+  height:12em;
+  float:left;
+}
+
+.savingAmount:hover{
+  color:tomato;
+}

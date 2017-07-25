@@ -21,16 +21,16 @@ prices=Price.create(
 cars=Car.create(
   [{color: "red", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 1, paid: false, price: 59000.0, reviewed: false,delivered:false,vin:'wait'},
     {color: "white", ap: false, awd: false, sd: false, battery: 70, wheel: 17, user_id: 1, paid: false, price: 42500.0, reviewed: false,delivered:false,vin:'wait'},
-    {color: "white", ap: false, awd: false, sd: false, battery: 60, wheel: 17, user_id: 3, paid: false, price: 35000.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "grey", ap: false, awd: false, sd: false, battery: 60, wheel: 17, user_id: 3, paid: false, price: 35000.0, reviewed: false,delivered:false,vin:'wait'},
     {color: "red", ap: true, awd: false, sd: false, battery: 80, wheel: 17, user_id: 1, paid: false, price: 51200.0, reviewed: false,delivered:false,vin:'wait'},
-    {color: "red", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 1, paid: false, price: 59000.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "black", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 1, paid: false, price: 59000.0, reviewed: false,delivered:false,vin:'wait'},
     {color: "white", ap: false, awd: false, sd: false, battery: 70, wheel: 17, user_id: 2, paid: false, price: 42500.0, reviewed: false,delivered:false,vin:'wait'},
-    {color: "white", ap: false, awd: true, sd: false, battery: 70, wheel: 17, user_id: 2, paid: false, price: 47500.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "grey", ap: false, awd: true, sd: false, battery: 70, wheel: 17, user_id: 2, paid: false, price: 47500.0, reviewed: false,delivered:false,vin:'wait'},
     {color: "red", ap: true, awd: false, sd: false, battery: 60, wheel: 17, user_id: 2, paid: false, price: 39200.0, reviewed: false,delivered:false,vin:'wait'},
-    {color: "red", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 3, paid: false, price: 59000.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "black", ap: true, awd: false, sd: true, battery: 80, wheel: 17, user_id: 3, paid: false, price: 59000.0, reviewed: false,delivered:false,vin:'wait'},
     {color: "white", ap: false, awd: false, sd: false, battery: 70, wheel: 17, user_id: 3, paid: false, price: 42500.0, reviewed: false,delivered:false,vin:'wait'},
     {color: "white", ap: false, awd: true, sd: false, battery: 70, wheel: 17, user_id: 3, paid: false, price: 47500.0, reviewed: false,delivered:false,vin:'wait'},
-    {color: "red", ap: true, awd: false, sd: false, battery: 60, wheel: 17, user_id: 2, paid: false, price: 39200.0, reviewed: false,delivered:false,vin:'wait'},
+    {color: "black", ap: true, awd: false, sd: false, battery: 60, wheel: 17, user_id: 2, paid: false, price: 39200.0, reviewed: false,delivered:false,vin:'wait'},
   ])
 
 consumptions=Consumption.create(
@@ -44,6 +44,9 @@ Car.update(3,paid:true,delivered:true,vin:'USCA117JX12A8')
 Car.update(8,paid:true,delivered:true,vin:'USCA888JX77B6')
 
 Review.create([{comment:'a reviewed car 1 5',user_id:1,car_id:1,rating:5},{comment:'a reviewed car 2 4',user_id:1,car_id:2,rating:4},
-  {comment:'c reviewed car 3 3',user_id:3,car_id:3,rating:3},{comment:'a reviewed car 4 5',user_id:1,car_id:4,rating:5},
+  {comment:'c reviewed car 3 3',user_id:3, car_id:3,rating:3},{comment:'a reviewed car 4 5',user_id:1,car_id:4,rating:5},
   {comment:'a reviewed car 5 4',user_id:1, car_id:5,rating:4},{comment:'b reviewed car 6 5',user_id:2,car_id:6,rating:5},
-  {comment:'b reviewed car 7 4',user_id:2,car_id:7,rating:4},{comment:'b reviewed 1',user_id:2,car_id:8,rating:1}])
+  {comment:'b reviewed 1',user_id:2,car_id:8,rating:1}])
+
+
+
