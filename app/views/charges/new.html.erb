@@ -1,29 +1,42 @@
-<%= form_tag charges_path do %>
-  <article>
-  <p>Car ID <%= @car.id %></p>
-  <p>All Wheel Drive <%= @car.awd %></p>
-  <p>Self driving <%= @car.sd %></p>
-  <p>Color <%= @car.color %></p>
-  <p>Battery <%= @car.battery %></p>
-  <p>Wheel <%= @car.wheel %></p>
-  <p>Autopilot <%= @car.ap %></p>
-  <p>Created by <%= @car.user_id %></p>
-  <p><%= User.find(@car.user_id).email %></p>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $<%= Car.deposit %></span>
-    </label>
-  </article>
-  <input type="hidden" name="carID" value="<%= @car.id %>">
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.application.secrets[:stripe_publishable_key] %>"
-          data-description="Model 3 Order"
-          data-amount= "<%= Car.deposit*100 %>"
-          data-email= "<%= User.find(session[:user_id]).email %>"
-          data-locale="auto"></script>
-<% end %>
+<div id='payment' style='text-align: center'>
+  <%= form_tag charges_path do %>
+    <article id='carDescription'>
+      <%= image_tag('model3_'+@car.color.to_s+'.png', height: '40%', width: '30%') %>
+       <h5>This car is equipped with the following options: </h5>
+        <% if @car.awd %>
+          <p>All Wheel Drive</p>
+        <% else %>
+          <p>Rear Wheel Drive</p>
+        <% end %>
+        <% if @car.ap %>
+          <p>Enhanced Autopilot</p>
+        <% end %>
+        <% if @car.sd %>
+          <p>Full Self-driving Capbability</p>
+        <% end %>
+        <% if @car.battery>60 %>
+          <p>Optional <%=@car.battery.to_s %> kWh battery</p>
+        <% else %>
+          <p>Standard 60 kWh battery</p>
+        <% end %>
+        <p>Wheel size: <%=@car.wheel %> inches </p>
+        <p>Total Retail Price: <%=@car.price%> USD</p>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="amount">
+          <span>Deposit Amount: $<%= Car.deposit %></span>
+        </label>
+        <br>
+        <input type="hidden" name="carID" value="<%= @car.id %>">
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.application.secrets[:stripe_publishable_key] %>"
+              data-description="Model 3 Order"
+              data-amount= "<%= Car.deposit*100 %>"
+              data-email= "<%= User.find(session[:user_id]).email %>"
+              data-locale="auto"></script>
+    </article>
+  <% end %>
+</div>
