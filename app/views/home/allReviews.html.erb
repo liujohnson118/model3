@@ -9,6 +9,7 @@
     <dd>80 kWh</dd>
 </dl>
 <div id='general_range'>
+  <p> Based on reports from our owners, actual real-world ranges of model 3s can are listed below: </p>
   <p id='actual_range_60' style='display: none'><%=Consumption.where(battery: 60).average(:range).to_s %></p>
   <p id='actual_range_70' style='display: none'><%=Consumption.where(battery: 70).average(:range).to_s %></p>
   <p id='actual_range_80' style='display: none'><%=Consumption.where(battery: 80).average(:range).to_s %></p>
