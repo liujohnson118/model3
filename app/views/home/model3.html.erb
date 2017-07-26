@@ -1,20 +1,20 @@
-<h1>Model 3 Home Page</h1>
-<a href='/model3/new'>Order Model 3</a>
-<section>
-  <div id="map"></div>
-  <dl>
-    <dt class="smallBattery">Aqua</dt>
-    <dd>60kWh</dd>
-    <dt class="mediumBattery">Black</dt>
-    <dd>70 kWh</dd>
-    <dt class="largeBattery">Orange</dt>
-    <dd>80 kWh</dd>
-  </dl>
-</section>
-<%= javascript_include_tag('map.js') %>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets[:google_maps_api_key] %>&callback=initMap">
-</script>
+<%= image_tag('model3_home.jpg', :id=>'sunshine') %>
+<div id='superchargerIntro'>
+  <%= image_tag('supercharger.png', :id=>'superchargerPic') %>
+  <p class='explain'>All Model3s come standard with hardware for supercharging. Every model 3 owner also gets 400kWh credit for using superchargers for free.</p>
+  <p class='explain'>A network of dedicated superchargers have been installed in and around major cities in North America, Europe, and Asia Pacific. We plan to double the number of superchargers by 2018.</p>
+</div>
+
+<div id='homechargerIntro'>
+  <%= image_tag('homecharger',:id=>'homechargerPic') %>
+  <p class='explain'>About 90% of charging occurs at home. You can fully charge a model 3 at home using a professionally installed level 2 charger in about 7 hours.</p>
+</div>
+
+<div style='width: 15%;margin-left:47.5%;margin-top:2em'>
+  <a href='/model3/new'>Design Studio</a>
+</div>
+
+
 
 
 
