@@ -1,5 +1,9 @@
 <section id='general' style="position:fixed">
 <div id='map' style="width:100%"></div>
+<div id='newPostalCode'>
+  <input type="text" id='postalCode' placeholder="Enter your postal code here">
+  <button id='checkRangeButton'>See Where I can Go</button>
+</div>
 <dl>
     <dt class="smallBattery">Aqua</dt>
     <dd>60kWh</dd>
@@ -22,7 +26,6 @@
   <%= render Review.where(user_id:session[:user_id]) %>
   <%= render Review.where.not(user_id:session[:user_id]) %>
 </div>
-
 <%= javascript_include_tag('actual_range.js') %>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets[:google_maps_api_key] %>&callback=actualRangeMap">

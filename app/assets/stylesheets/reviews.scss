@@ -47,3 +47,18 @@ a.delete_review{
 div.rating{
   background:#e5e2de;
 }
+
+body.backgroundBlackTesla {
+  background: url('http://insideevs.com/wp-content/uploads/2014/11/10338520_10152812206087801_3978243583378623474_o.jpg');
+}
+
+#review_rating{
+  width: 20%;
+  margin:auto;
+}
+
+#review_comment{
+  width: 20%;
+  height:10em;
+  margin:auto;
+}

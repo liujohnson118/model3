@@ -1,17 +1,19 @@
-<h1>Post a review for your tesla</h1>
-
-<%= form_for :review, url:'/review/'+params[:car_id]+'/new' do |f| %>
-  <%= f.label :comment %><br>
-  <%= f.text_field :comment %>
-  <div>
-    <%= f.label :rating %>
-    <%= f.select :rating, [['5',5],['4',4],['3',3],['2',2],['1',1]]%>
-   </div>
-  <p>
-    <%= f.submit 'Submit Review' %>
-  </p>
-  <span id="counter">140</span>
-  <span class="flashMessage"></span>
-<% end %>
+<body class='backgroundBlackTesla'>
+<div id='comment_form'>
+<%= form_for :review, html: {class: 'pure-form pure-form-stacked'}, url: '/review/'+params[:car_id]+'/new' do |f| %>
+      <fieldset>
+        <legend>Post a review for your Tesla</legend>
+        <%= label_tag(:comment, 'Comment') %>
+          <%= f.text_field :comment, placeholder: 'Share your thoughts' %>
+          <span class="pure-form-message">This is a required field.</span><span id='counter'>140</span>
+          <%= label_tag(:rating, 'Rating') %>
+          <%= f.select :rating, [['5',5],['4',4],['3',3],['2',2],['1',1]]%>
+          <span class="pure-form-message">This is a required field.</span>
+        <button type="submit" class="pure-button pure-button-primary">Submit Review</button>
+        <span class="flashMessage"></span>
+    </fieldset>
+    <%end %>
+</div>
+</body>
 
 <%= javascript_include_tag('characterCounter.js') %>
