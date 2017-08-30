@@ -2,6 +2,8 @@
 
 This is a full stack web app built with ruby on rails. It is a fan-built Tesla Model 3 custom order web app. This app allows model3 owners and potential buyers to custom order their vehicle, pay the deposit, and share their real world energy consumption and reviews of their vehicles. While the links to Model S and Model X redirect to the official site of Tesla, the app focus on the Model 3 and offers an interaction unique from that of Tesla.
 
+The app allows users to order and manage multiple Model 3s, as more and more people are having more than 1 car in multiple locations across the world.
+
 ## Technologies Used
 
 * PSQL
