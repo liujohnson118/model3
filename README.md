@@ -40,3 +40,7 @@ This web app was built with ruby 2.3 and rails 5.1.3. It also requires psql for 
 * The Model S and Model X links on the nav bar redirect the user to the official sites of Model S and Model X, respectively. The Model 3 link on the nav bar will redirect to a Model 3 intro page made by the creator of the web app.
 !["Model3 Home"](https://github.com/liujohnson118/model3/blob/master/docs/model3_home.png)
 
+* Once logged in, the user can click "Design Studio" on the buttom of the homepage of model 3 as shown in the picture above. This will lead the user to the custom order page. On the custom order page, the user can select the battery, drive train, color, wheel, autopilot, and self driving features for his/her car. The price is shown on the left of the page. Also, the user can click on his/her province on the left part of the page to see the price after provincial incentives.
+
+!["Custom Order"](https://github.com/liujohnson118/model3/blob/master/docs/top.png)
+!["Custom Order"](https://github.com/liujohnson118/model3/blob/master/docs/buttom.png)
