@@ -44,3 +44,20 @@ This web app was built with ruby 2.3 and rails 5.1.3. It also requires psql for 
 
 !["Custom Order"](https://github.com/liujohnson118/model3/blob/master/docs/top.png)
 !["Custom Order"](https://github.com/liujohnson118/model3/blob/master/docs/buttom.png)
+
+* After creating the car for order, the owner will be redirected to his/her list of Teslas with the most recently customized on the top. If the user is over 18 years old as determined by his/her birth date at time of registration, he/she can pay for the car's deposit. The owner also has the method to delete that car.
+!["Onwer Resources"](https://github.com/liujohnson118/model3/blob/master/docs/teslas.png)
+
+* Once paid for the car and the car is delivered (as done by some other backend logic and processes), the user can post a reiview by clicking "write a review".
+!["Post a review 1"](https://github.com/liujohnson118/model3/blob/master/docs/delivered_car.png)
+!["Post a review 2"](https://github.com/liujohnson118/model3/blob/master/docs/post_review.png)
+
+* Once paid for the car and the car is delivered, the owner can also post a power consumption of his/her car so that the app will be able to calculate the real-world ranges of Tesla vehicles and present the best estimates of ranges for vehicles with different batteries to potential buyers.
+
+!["Power Consumption Sharing"](https://github.com/liujohnson118/model3/blob/master/docs/power.png)
+
+* By clicking "My Teslas" on the nav bar, the user will see a list of his/her vehicles. If a car is, say, delivered, the VIN number will be shown. If the deposit is yet to be paid, a message "awaiting deposit" will be shown.
+
+* The user can also see a list of reviews by other owners who have actually paid for their cars by clicking "customer reviews" on the navbar. The ratings are in the form of a numerical rating and a description.
+* Below the map in the figure below, the user can type into his/her location or let the app determine his/her current location. The app can then draw 3 circles centred at that location to approximate where a Model 3 can take the user based on the average of consumptions posted by other owners. The radii of the circle represent ranges for different battery sizes.
+!["Customer reviews and real world range estimates"](https://github.com/liujohnson118/model3/blob/master/docs/map.png)
