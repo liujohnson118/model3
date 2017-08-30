@@ -13,7 +13,7 @@ This is a full stack web app built with ruby on rails. It is a fan-built Tesla M
 
 ## General Requirements
 
-This web app was built with ruby 2.3 and rails 5.1.3.
+This web app was built with ruby 2.3 and rails 5.1.3. It also requires psql for database control.
 
 ## Run on Local Host
 
@@ -29,5 +29,12 @@ This web app was built with ruby 2.3 and rails 5.1.3.
 
 ## User Experience
 
-#### The homepage looks like the following:
+* The homepage looks like the following:
+!["homepage"](https://github.com/liujohnson118/model3/blob/master/docs/home.png)
+
+* The user can click `sign up` on the top right corner to sign up for an account. The app will check the passport number and the email for duplicate entries and will reject registration with duplicate email and/or passport number.
+!["signup"](https://github.com/liujohnson118/model3/blob/master/docs/signup.png)
+
+* The Model S and Model X links on the nav bar redirect the user to the official sites of Model S and Model X, respectively. The Model 3 link on the nav bar will redirect to a Model 3 intro page made by the creator of the web app.
+!["Model3 Home"](https://github.com/liujohnson118/model3/blob/master/docs/model3_home.png)
 
