@@ -52,7 +52,7 @@ This web app was built with ruby 2.3 and rails 5.1.3. It also requires psql for 
 !["Post a review 1"](https://github.com/liujohnson118/model3/blob/master/docs/delivered_car.png)
 !["Post a review 2"](https://github.com/liujohnson118/model3/blob/master/docs/post_review.png)
 
-* Once paid for the car and the car is delivered, the owner can also post a power consumption of his/her car so that the app will be able to calculate the real-world ranges of Tesla vehicles and present the best estimates of ranges for vehicles with different batteries to potential buyers.
+* Once paid for the car and the car is delivered, the owner can also post a power consumption of his/her car so that the app will be able to calculate the real-world ranges of Tesla vehicles and present the best estimates of ranges for vehicles with different batteries to potential buyers. This can be done using the slider or entering the numerical value in the box.
 
 !["Power Consumption Sharing"](https://github.com/liujohnson118/model3/blob/master/docs/power.png)
 
