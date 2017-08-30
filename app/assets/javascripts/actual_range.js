@@ -42,16 +42,19 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function drawMap(myLat,myLng){
-  infoWindow = new google.maps.InfoWindow;
+
   // Try HTML5 geolocation.
   if(!myLat){
+    infoWindow = new google.maps.InfoWindow;
     if (navigator.geolocation) {
+      console.log('Not myLat');
       navigator.geolocation.getCurrentPosition(function(position) {
         //Current location
         var pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+        console.log('pos');
 
         //Create map
         map = new google.maps.Map(document.getElementById('map'),{
@@ -117,6 +120,7 @@ function drawMap(myLat,myLng){
       });
     }
   }else{
+    infoWindow = new google.maps.InfoWindow;
     map = new google.maps.Map(document.getElementById('map'),{
           center: {lat: myLat, lng: myLng},
           zoom: 5

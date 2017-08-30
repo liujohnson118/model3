@@ -39,7 +39,7 @@ gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.1'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
